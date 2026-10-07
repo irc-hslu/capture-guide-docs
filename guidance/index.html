@@ -1,0 +1,853 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Live guidance on your iPhone for capturing scenes for 3D Gaussian Splatting.">
+      
+      
+        <meta name="author" content="Immersive Realities Center, HSLU">
+      
+      
+        <link rel="canonical" href="https://irc-hslu.github.io/capture-guide-docs/guidance/">
+      
+      
+        <link rel="prev" href="../capturing/">
+      
+      
+        <link rel="next" href="../exporting/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.svg">
+      <meta name="generator" content="zensical-0.0.68">
+    
+    
+      
+        <title>Reading the guidance - Capture Guide</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.595f2bf5.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.b27955a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/irc.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="Capture Guide" class="md-header__button md-logo" aria-label="Capture Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Capture Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reading the guidance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun-moon" viewBox="0 0 24 24"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="Capture Guide" class="md-nav__button md-logo" aria-label="Capture Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    Capture Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../capturing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Capturing a scene
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reading the guidance
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reading the guidance
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quality-dots" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quality dots
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splat-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Splat preview
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grey-hatching" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Grey hatching
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyframe-frustums" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Keyframe frustums
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-view-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Next-view target
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guidance-sounds-and-taps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Guidance sounds and taps
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimap" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Minimap
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Troubleshooting and FAQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quality-dots" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quality dots
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splat-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Splat preview
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grey-hatching" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Grey hatching
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keyframe-frustums" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Keyframe frustums
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-view-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Next-view target
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guidance-sounds-and-taps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Guidance sounds and taps
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimap" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Minimap
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="reading-the-guidance">Reading the guidance</h1>
+<p>What the on-screen guidance tells you while you capture, and what to do about each part.</p>
+<p>Most of it is drawn over the camera image and comes from the engine on your phone, which keeps training a rough reconstruction as you walk. The first dots and hatching therefore show up a little while after you start, once there is a first reconstruction to judge. Until then the line in the top bar reads "done – %". If you start with "Capture without server" instead, the app saves your keyframes but draws no quality dots, hatching or targets. The keyframe frustums still show.</p>
+<p>The quality dots, the next-view targets and the keyframe frustums each have a button on the right edge of the screen (filled icon: on, outlined: off), and a switch in the Settings sheet. All three belong to the "Quality" view, described under <a href="#splat-preview">Splat preview</a>, and the buttons show only there.</p>
+<h2 id="quality-dots">Quality dots</h2>
+<p><strong>What you see.</strong> Small dots floating over the scene, one for each splat (a tiny blob of colour; the reconstruction is made of many of them) in the reconstruction so far. With the default colour scheme, "Blue-Orange", a light blue dot is well covered, the colour turns darker as coverage gets worse, and orange means the spot needs work. The minimap legend (<a href="#minimap">below</a>) always shows the scheme you picked, from "good" to "needs work".</p>
+<p><strong>What it means.</strong> A spot gets full marks when the phone has seen it in about 8 photos, taken from a spread of directions, with at least one of them close enough to show it sharply. Fewer photos, or photos from one side only, leave the dot towards orange. The colours change as the phone takes new keyframes.</p>
+<p>The "done" figure in the top bar counts the share of known spots that are nearly fully covered (more than 80%).</p>
+<p><strong>What to do.</strong> Walk towards the orange dots and look at them from a new side. Moving sideways helps more than turning on the spot, for the reasons given in <a href="../capturing/#angles">Capturing a scene</a>.</p>
+<p>Turn the dots off with the "Quality dots" button or with "Show dots" in the Settings sheet; the engine keeps training either way. The "Colours" setting under "Quality view" switches the scheme.</p>
+<figure>
+<p><img alt="Quality dots over a room, orange where coverage is weak" loading="lazy" src="../img/guidance-quality-dots.png" /></p>
+<figcaption>
+<p>Screenshot pending: a room in the camera view with quality dots, light blue on a well-covered wall and orange on a weakly covered corner, with the "done" figure visible in the top bar.</p>
+</figcaption>
+</figure>
+<h2 id="splat-preview">Splat preview</h2>
+<p><strong>What you see.</strong> The segmented control at the top of the screen reads "Quality" or "Splats", and a slider next to it sets the preview's opacity. Both appear only when you capture on this iPhone.</p>
+<p>"Quality" is the default: the camera image with all the guidance layers on it. "Splats" hides the camera image and the other layers of the Quality view, and shows the reconstruction itself on black, so you can see what the phone has built so far. The minimap stays.</p>
+<p><strong>What it means.</strong> Gaps and thin areas in the "Splats" view are places the reconstruction has not learned yet. The slider sets how see-through the preview is, from nearly transparent to solid, and it fades the dots too.</p>
+<p><strong>What to do.</strong> Switch to "Splats" for a quick look, then switch back to "Quality" to carry on with the guidance. While "Splats" is showing, next-view targets are paused.</p>
+<p>In the Settings sheet, "Preview style" chooses between "Dots" (the default) and "Colour". With "Colour" the preview shows the reconstruction's own colours instead of dots, and "Quality tint" can blend each splat towards its quality colour.</p>
+<p>When you tap "Finish" the preview stops, and the camera image comes back with the guidance layers gone.</p>
+<figure>
+<p><img alt="Splats view of a half-built room on a black background" loading="lazy" src="../img/guidance-splat-preview.png" /></p>
+<figcaption>
+<p>Screenshot pending: the "Splats" view of a partly reconstructed room on black, with the "Quality / Splats" control and the opacity slider visible at the top.</p>
+</figcaption>
+</figure>
+<h2 id="grey-hatching">Grey hatching</h2>
+<p><strong>What you see.</strong> Grey diagonal stripes over a faint grey fill, lying on the surfaces the sensor has found.</p>
+<p><strong>What it means.</strong> The LiDAR sensor has found a surface here, but the reconstruction has nothing within about 10 cm of it yet. Hatching needs LiDAR; without it there is none. It also stays off until the first reconstruction exists, so you do not see it in the first moments of a capture.</p>
+<p><strong>What to do.</strong> Point the camera at the hatched surfaces. The stripes disappear as the reconstruction catches up.</p>
+<figure>
+<p><img alt="Grey hatching on a wall and the floor" loading="lazy" src="../img/guidance-hatch.png" /></p>
+<figcaption>
+<p>Screenshot pending: grey diagonal hatching on part of a wall and floor, with the already reconstructed part of the same wall free of it.</p>
+</figcaption>
+</figure>
+<h2 id="keyframe-frustums">Keyframe frustums</h2>
+<p><strong>What you see.</strong> A thin outline of a pyramid at every place where the app took a keyframe, pointing the way the camera looked. It is on by default.</p>
+<p><strong>What it means.</strong> The colour tells you how well that keyframe is tied to the others: it runs from "needs work" at 0% to "good" at 72%, the share of its view that another keyframe also sees. A white pyramid means the app cannot judge that keyframe yet. A new segment clears them, because the old coordinate system is gone.</p>
+<p><strong>What to do.</strong> Where pyramids sit at the "needs work" end, add views in between and around them, so each keyframe shares more of its view with its neighbours.</p>
+<p>Switch them with the "Keyframe frustums" button or with "Show keyframe frustums" in the Settings sheet. Like the dots and the hatching, they show in the "Quality" view only.</p>
+<figure>
+<p><img alt="Keyframe pyramids along a walked path" loading="lazy" src="../img/guidance-frustums.png" /></p>
+<figcaption>
+<p>Screenshot pending: pyramid outlines along a walked path, most of them blue and one or two orange where keyframes are far apart.</p>
+</figcaption>
+</figure>
+<h2 id="next-view-target">Next-view target</h2>
+<p><strong>What you see.</strong> A yellow camera shape in the room, with a ring on the floor under it, and an outlined box around the area to capture. When you are close to the yellow camera, a ring appears at the area itself. If the yellow camera is outside the screen, a white arrowhead near the screen edge points towards it.</p>
+<p>A line in the top bar tells you what to do next. These are the lines, as they appear:</p>
+<ul>
+<li>"Stand at the yellow camera and point it at the outlined area": you are still far from it.</li>
+<li>"Point at the outlined area": you are at the yellow camera but not yet looking the right way.</li>
+<li>"Turn toward the outlined area": the same, with an arrow showing which way to turn.</li>
+<li>"Good — hold steady": you are in position, and the whole target turns green.</li>
+<li>"Captured": the target is done. It stays for a second.</li>
+<li>"Keep scanning — the next view appears shortly": weak areas remain, but there is no target to show right now.</li>
+</ul>
+<p>"Room covered" appears in green in the top bar when no weak area is left.</p>
+<p><strong>What it means.</strong> The app picks one weak area at a time and shows you where to stand to fix it. You are in position when you are within about half a metre of the yellow camera and looking roughly at the area. With automatic keyframes on, the app then takes a keyframe by itself, you feel a tap, and you hear a click. If you use "Manual capture", tap the shutter button yourself.</p>
+<p>A target ends in one of four ways:</p>
+<ul>
+<li>A keyframe is taken while you are in position. You hear a tone and feel a tap, "Captured" shows, and the next target follows.</li>
+<li>Other photos you take cover the area first.</li>
+<li>You do not approach for about 20 seconds. The app drops the target and may offer another.</li>
+<li>Another area becomes clearly more important.</li>
+</ul>
+<p>No target shows during the first 20 seconds of a segment. Targets also need the "Next-view targets" switch (on by default) and a running capture. They show only in the "Quality" view.</p>
+<p><strong>What to do.</strong> Walk to the yellow camera and point the phone at the outlined area. When "Room covered" shows, you can finish, or carry on if you want a denser capture.</p>
+<figure>
+<p><img alt="Yellow camera, floor ring and outlined area in a room" loading="lazy" src="../img/guidance-next-view-target.png" /></p>
+<figcaption>
+<p>Screenshot pending: a room with the yellow camera shape, the ring on the floor below it, the outlined box on a wall, and the instruction line "Stand at the yellow camera and point it at the outlined area" in the top bar.</p>
+</figcaption>
+</figure>
+<h2 id="guidance-sounds-and-taps">Guidance sounds and taps</h2>
+<p>Two short sounds go with the targets: a click when you reach the yellow camera, and a tone when its area is covered. The "Guidance sounds" switch in the Settings sheet turns them off. The phone's silent switch mutes them as well, and music or podcasts keep playing underneath. The taps you feel on arrival and on completion do not depend on that switch.</p>
+<p>"Proximity ticks" are soft taps that come faster as you get nearer to the yellow camera, like a parking sensor, and stop once you are in position. Turn them off in the same section of the Settings sheet.</p>
+<h2 id="minimap">Minimap</h2>
+<p><strong>What you see.</strong> A round map at the bottom right, looking down from above. Your view direction always points up, and a white triangle in the middle is you. The map covers 5 metres around you. Each small square is a patch of known surface, coloured like the dots, with the legend "good" and "needs work" under it. A yellow dot marks the next-view target, with a short arrow towards the area to point at. If the yellow camera is more than 5 metres away, the dot sits on the rim.</p>
+<p><strong>What it means.</strong> It shows where around you coverage is still weak, including the spots behind you.</p>
+<p><strong>What to do.</strong> Use it to decide where to walk next, then use the target and the dots for the details. Tap the map to hide it; a "Map" button takes its place. Tap that to bring the map back.</p>
+<figure>
+<p><img alt="Minimap with a yellow target dot" loading="lazy" src="../img/guidance-minimap.png" /></p>
+<figcaption>
+<p>Screenshot pending: the round minimap at the bottom right with blue and orange squares, the white triangle in the middle, the yellow target dot with its arrow, and the "good" and "needs work" legend.</p>
+</figcaption>
+</figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../capturing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Capturing a scene">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Capturing a scene
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../exporting/" class="md-footer__link md-footer__link--next" aria-label="Next: Exporting">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Exporting
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      © 2026 <a href="https://irc-hslu.github.io/">Immersive Realities Center</a>, Lucerne University of Applied Sciences and Arts
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://irc-hslu.github.io/" target="_blank" rel="noopener" title="Immersive Realities Center" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.footer","navigation.top","toc.follow","content.code.copy"],"redirect":null,"search":"../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.3c842f4c.min.js"></script>
+      
+    
+  </body>
+</html>
