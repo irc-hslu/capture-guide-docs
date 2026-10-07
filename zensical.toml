@@ -14,6 +14,7 @@ nav = [
   { "Reading the guidance" = "guidance.md" },
   { "Exporting" = "exporting.md" },
   { "Troubleshooting and FAQ" = "troubleshooting.md" },
+  { "Download" = "exporting.md#turning-a-segment-into-a-colmap-model" },
 ]
 extra_css = ["stylesheets/irc.css"]
 

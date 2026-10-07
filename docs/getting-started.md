@@ -28,7 +28,7 @@ The phone runs the reconstruction itself, so you need no other device. Ignore th
 5. Walk slowly and keep the camera pointed at the scene. Each time the app takes a keyframe, the screen edge flashes white once and a thumbnail appears above the bottom buttons. The counter in the top bar ("12 kf", for keyframes: the photos the app keeps) goes up. [Capturing a scene](capturing.md) explains how to walk.
 6. Watch the guidance and walk to the places it points out. [Reading the guidance](guidance.md) explains each element.
 7. When "Room covered" appears, or when you have seen everything you want, tap "Finish". The button reads "Finishing…", then "Saved · training splat…" (the phone is still training the 3D model, which is made of many splats, tiny blobs of colour) and finally "Saved · splat on phone".
-8. Tap "New capture" to return to the start screen, or leave the app. Your capture stays in the Capture Guide folder in the Files app. [Exporting](exporting.md) shows how to use it.
+8. Tap "New capture" to return to the start screen, or leave the app. Your capture stays in the Capture Guide folder in the Files app. [Exporting](exporting.md) shows how to use it. To train a 3D model on a Mac afterwards, convert a segment with the [Capture to COLMAP](exporting.md#turning-a-segment-into-a-colmap-model) app.
 
 ![Start screen with the On this iPhone section](img/getting-started-start-screen.png){ loading=lazy }
 /// caption
