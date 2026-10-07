@@ -1,0 +1,66 @@
+[project]
+site_name = "Capture Guide"
+site_url = "https://irc-hslu.github.io/capture-guide-docs/"
+site_description = "Live guidance on your iPhone for capturing scenes for 3D Gaussian Splatting."
+site_author = "Immersive Realities Center, HSLU"
+copyright = "© 2026 <a href=\"https://irc-hslu.github.io/\">Immersive Realities Center</a>, Lucerne University of Applied Sciences and Arts"
+docs_dir = "docs"
+site_dir = "build"
+strict = true
+nav = [
+  { "Home" = "index.md" },
+  { "Getting started" = "getting-started.md" },
+  { "Capturing a scene" = "capturing.md" },
+  { "Reading the guidance" = "guidance.md" },
+  { "Exporting" = "exporting.md" },
+  { "Troubleshooting and FAQ" = "troubleshooting.md" },
+]
+extra_css = ["stylesheets/irc.css"]
+
+[project.validation]
+invalid_links = true
+invalid_link_anchors = true
+
+[project.markdown_extensions]
+admonition = {}
+attr_list = {}
+md_in_html = {}
+pymdownx.details = {}
+pymdownx.blocks.caption = {}
+pymdownx.superfences.custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+
+[project.theme]
+favicon = "assets/favicon.svg"
+features = ["navigation.footer", "navigation.top", "toc.follow", "content.code.copy"]
+font.text = "Roboto"
+font.code = "Roboto Mono"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "custom"
+accent = "custom"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+[[project.extra.social]]
+icon = "lucide/house"
+link = "https://irc-hslu.github.io/"
+name = "Immersive Realities Center"
