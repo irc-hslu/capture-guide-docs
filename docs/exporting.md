@@ -44,7 +44,7 @@ To use it:
 2. Next to "Segment folder", click "Choose…" and pick one segment folder, such as `segment-0`.
 3. "Output folder" is filled in with the same name plus `_colmap`, next to the segment. Change it with "Choose…" if you like.
 4. Leave "Camera positions" and "Photo matching" on their recommended entries. "Refine with the phone's positions (recommended)" matches the photos to each other, starting from where the phone thought the camera was, and keeps the result at real-world scale. The other entry, "Use the phone's positions as they are", skips that fit. "Neighbouring photos (recommended)" compares each photo with the ones taken around it. "Every photo with every other (slow; short captures only)" compares all of them. "Match checking" can stay on "Standard (recommended)". If many photos are missing from the result, export again with "Relaxed, checked against the phone's tracking (more photos, slower)". It places more photos and checks them more thoroughly against the phone's positions, which takes longer.
-5. Leave "Starting points" on its recommended entry too. It writes `seed.ply`, a cloud of points from the phone's depth sensor, the photos and the phone's own points, which Spirula Studio can start training from.
+5. Leave "Starting points" on its recommended entry too. It writes `seed.ply`, a cloud of points from the phone's depth sensor and its own points, together with COLMAP's, coloured from your photos, which Spirula Studio can start training from.
 6. Click "Export". The app shows the elapsed time and a status line. "Show details" opens the log.
 7. When the status line says "Done", click "Show in Finder" to open the output folder.
 
@@ -52,14 +52,14 @@ The output folder holds:
 
 - `images/`: copies of the photos, so the folder works on its own and you can move it.
 - `sparse/0/`: the COLMAP model.
-- `seed.ply`: the starting points for training.
+- `seed.ply`: the starting points for training (absent when Starting points is None).
 - `work/`: the app's working files, which the trainer does not need.
 
 Photos that the app cannot match well enough are left out of the model. Exporting the same segment again replaces the earlier export.
 
 ![The Capture to COLMAP window ready to export](img/exporting-capture-to-colmap.png){ loading=lazy }
 /// caption
-Screenshot pending: the Capture to COLMAP window with a segment folder chosen, the output folder filled in, all three options on their recommended entries and the "Export" button visible.
+Screenshot pending: the Capture to COLMAP window with a segment folder chosen, the output folder filled in, all four dropdowns on their recommended entries and the "Export" button visible.
 ///
 
 ## Training
