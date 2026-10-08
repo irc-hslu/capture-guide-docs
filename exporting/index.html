@@ -705,7 +705,7 @@
 <li>Open Capture to COLMAP.</li>
 <li>Next to "Segment folder", click "Choose…" and pick one segment folder, such as <code>segment-0</code>.</li>
 <li>"Output folder" is filled in with the same name plus <code>_colmap</code>, next to the segment. Change it with "Choose…" if you like.</li>
-<li>Leave "Camera positions" and "Photo matching" on their recommended entries. "Refine with the phone's positions (recommended)" matches the photos to each other, starting from where the phone thought the camera was, and keeps the result at real-world scale. The other entry, "Use the phone's positions as they are", skips that fit. "Neighbouring photos (recommended)" compares each photo with the ones taken around it. "Every photo with every other (slow; short captures only)" compares all of them.</li>
+<li>Leave "Camera positions" and "Photo matching" on their recommended entries. "Refine with the phone's positions (recommended)" matches the photos to each other, starting from where the phone thought the camera was, and keeps the result at real-world scale. The other entry, "Use the phone's positions as they are", skips that fit. "Neighbouring photos (recommended)" compares each photo with the ones taken around it. "Every photo with every other (slow; short captures only)" compares all of them. "Match checking" can stay on "Standard (recommended)". If many photos are missing from the result, export again with "Relaxed, checked against the phone's tracking (more photos, slower)". It places more photos and checks them more thoroughly against the phone's positions, which takes longer.</li>
 <li>Click "Export". The app shows the elapsed time and a status line. "Show details" opens the log.</li>
 <li>When the status line says "Done", click "Show in Finder" to open the output folder.</li>
 </ol>
@@ -719,7 +719,7 @@
 <figure>
 <p><img alt="The Capture to COLMAP window ready to export" loading="lazy" src="../img/exporting-capture-to-colmap.png" /></p>
 <figcaption>
-<p>Screenshot pending: the Capture to COLMAP window with a segment folder chosen, the output folder filled in, both options on their recommended entries and the "Export" button visible.</p>
+<p>Screenshot pending: the Capture to COLMAP window with a segment folder chosen, the output folder filled in, all three options on their recommended entries and the "Export" button visible.</p>
 </figcaption>
 </figure>
 <h2 id="training">Training</h2>
