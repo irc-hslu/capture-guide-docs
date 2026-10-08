@@ -72,7 +72,7 @@ There are two routes. Both work.
 
 1. Convert the segment with Capture to COLMAP, as described above. The conversion refines the camera positions the phone recorded.
 2. Open the output folder, the one with `images/` and `sparse/0/`, in Spirula Studio.
-3. Choose `seed.ply` from the output folder as the seed point cloud ("Seed point cloud PLY"). This needs Spirula Studio 2026.10.6 or newer; with an older version, skip this step. A long capture can give a `seed.ply` with more than a million points, and Spirula Studio's source code shows that it then starts from a random subset as large as its splat limit (one million by default).
+3. Choose `seed.ply` from the output folder as the seed point cloud ("Seed point cloud PLY"). This needs Spirula Studio 2026.10.6 or newer; with an older version, skip this step. A long capture can give a `seed.ply` with more than a million points. You don't need to do anything about it: Spirula Studio's source code shows that it then starts from a random subset as large as its splat limit (one million by default), and in a test on one capture a cloud thinned to 300,000 points trained nearly as well as the full one.
 4. Start training and watch the preview until it looks good, then save the result as a `.ply` file and open it in a splat viewer.
 
 ### The quick route: straight from the phone's folder
