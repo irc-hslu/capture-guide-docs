@@ -45,14 +45,16 @@ To use it:
 3. "Output folder" is filled in with the same name plus `_colmap`, next to the segment. Change it with "Choose…" if you like.
 4. Leave "Camera positions" and "Photo matching" on their recommended entries. "Refine with the phone's positions (recommended)" matches the photos to each other, starting from where the phone thought the camera was, and keeps the result at real-world scale. The other entry, "Use the phone's positions as they are", skips that fit. "Neighbouring photos (recommended)" compares each photo with the ones taken around it. "Every photo with every other (slow; short captures only)" compares all of them. "Match checking" can stay on "Standard (recommended)". If many photos are missing from the result, export again with "Relaxed, checked against the phone's tracking (more photos, slower)". It places more photos and checks them more thoroughly against the phone's positions, which takes longer.
 5. Leave "Starting points" on its recommended entry too. It writes `seed.ply`, a cloud built from the phone's depth sensor and the phone's own points, together with COLMAP's points, coloured from your photos. Spirula Studio can start training from it.
-6. Click "Export". The app shows the elapsed time and a status line. "Show details" opens the log.
-7. When the status line says "Done", click "Show in Finder" to open the output folder.
+6. Leave "Depth images" on Phone LiDAR. It writes the depth sensor's readings next to the photos, which some trainers can use as a guide for the geometry.
+7. Click "Export". The app shows the elapsed time and a status line. "Show details" opens the log.
+8. When the status line says "Done", click "Show in Finder" to open the output folder.
 
 The output folder holds:
 
 - `images/`: copies of the photos, so the folder works on its own and you can move it.
 - `sparse/0/`: the COLMAP model.
 - `seed.ply`: the starting points for training (absent when Starting points is None or nothing could be built).
+- `depths/`: the phone's depth sensor readings for each photo (absent when Depth images is None or the capture has no depth sensor data).
 - `work/`: the app's working files, which the trainer does not need.
 
 Photos that the app cannot match well enough are left out of the model. Exporting the same segment again replaces the earlier export.
@@ -73,7 +75,8 @@ There are two routes. Both work.
 1. Convert the segment with Capture to COLMAP, as described above. The conversion refines the camera positions the phone recorded.
 2. Open the output folder, the one with `images/` and `sparse/0/`, in Spirula Studio.
 3. Choose `seed.ply` from the output folder as the seed point cloud ("Seed point cloud PLY"). This needs Spirula Studio 2026.10.6 or newer; with an older version, skip this step. A long capture can give a `seed.ply` with more than a million points. You don't need to do anything about it: Spirula Studio's source code shows that it then starts from a random subset as large as its splat limit (one million by default), and in a test on one capture a cloud thinned to 300,000 points trained nearly as well as the full one.
-4. Start training and watch the preview until it looks good, then save the result as a `.ply` file and open it in a splat viewer.
+4. To let Spirula Studio use the depth images, set its depth supervision weight above 0 (command line: --depth-supervision-weight 0.1); at its default of 0 they are ignored.
+5. Start training and watch the preview until it looks good, then save the result as a `.ply` file and open it in a splat viewer.
 
 ### The quick route: straight from the phone's folder
 
