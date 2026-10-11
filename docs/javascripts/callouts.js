@@ -3,13 +3,17 @@
 // or data-x/data-y (percent of the image). Wide figures get labels beside the image with SVG lines; narrow figures
 // (or missing targets) get numbered markers on the image and the list below.
 // Authoring syntax (attr_list): the attribute list goes on its own indented line after the item text, because
-// attr_list only recognises it at the start of a line inside a list item:
+// attr_list does not apply a list at the end of the text line inside a list item:
 //   1. [**Status pill**](#status-pill): tracking state.
 //      { data-anchor="status-pill" data-side="l" }
+// Wide mode needs a label column of at least MIN_LABEL_COL px on each side of the image; the image width adapts
+// to the figure width (--shot-w).
 (function () {
   "use strict";
-  const WIDE = 720;
+  const MIN_LABEL_COL = 140;
   const NS = "http://www.w3.org/2000/svg";
+
+  function clamp(lo, v, hi) { return Math.min(Math.max(v, lo), hi); }
 
   function anchorsUrl(img) {
     return (img.currentSrc || img.src).replace(/\.(png|jpe?g|webp)(\?.*)?$/i, ".json");
@@ -79,7 +83,12 @@
 
   function draw(fig, img, shot, svg, items, markers, anchors) {
     const targets = items.map(li => target(li, anchors));
-    const wide = fig.clientWidth >= WIDE && targets.every(Boolean);
+    const W = fig.clientWidth;
+    const landscape = fig.classList.contains("callouts--landscape");
+    const shotW = landscape ? clamp(320, W - 300, 520) : clamp(200, W - 360, 300);
+    const gap = 2.2 * 0.72 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const wide = (W - shotW) / 2 - gap >= MIN_LABEL_COL && targets.every(Boolean);
+    fig.style.setProperty("--shot-w", shotW + "px");
     fig.classList.toggle("callouts--wide", wide);
     fig.classList.toggle("callouts--narrow", !wide);
     svg.replaceChildren();

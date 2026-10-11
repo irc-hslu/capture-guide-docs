@@ -17,7 +17,7 @@
 figure.callouts { display: block; position: relative; margin: 1.5em 0; text-align: left; }
 figure.callouts img { display: block; max-width: 100%; height: auto; }
 figure.callouts ol { margin: 0.8em 0 0; }
-.callouts__shot { position: relative; width: min(300px, 100%); margin: 0 auto; }
+.callouts__shot { position: relative; width: min(var(--shot-w, 300px), 100%); margin: 0 auto; }
 .callouts__shot img { border-radius: 18px; border: 1px solid var(--md-default-fg-color--lightest); }
 .callouts__marker { display: none; position: absolute; transform: translate(-50%, -50%); width: 1.5em; height: 1.5em;
   border-radius: 50%; background: var(--md-accent-fg-color); color: var(--md-accent-bg-color, #fff);
@@ -28,11 +28,9 @@ figure.callouts ol { margin: 0.8em 0 0; }
 figure.callouts--narrow .callouts__marker { display: block; }
 figure.callouts--narrow ol > li::marker { font-weight: 700; color: var(--md-accent-fg-color); }
 figure.callouts--wide ol { margin: 0; padding: 0; list-style: none; }
-figure.callouts--wide ol > li { position: absolute; width: calc(50% - 150px - 2.2em); margin: 0; font-size: 0.72rem; line-height: 1.35; }
+figure.callouts--wide ol > li { position: absolute; width: calc(50% - var(--shot-w, 300px) / 2 - 2.2em); margin: 0; font-size: 0.72rem; line-height: 1.35; }
 figure.callouts--wide ol > li[data-side="l"] { left: 0; text-align: right; }
 figure.callouts--wide ol > li:not([data-side="l"]) { right: 0; }
 figure.callouts--wide .callouts__lines { display: block; }
 figure.callouts .is-on { outline: 2px solid var(--md-accent-fg-color); outline-offset: 2px; border-radius: 4px; }
-figure.callouts--wide.callouts--landscape .callouts__shot { width: min(520px, 100%); }
-figure.callouts--wide.callouts--landscape ol > li { width: calc(50% - 260px - 2.2em); }
 .callouts__marker[hidden] { display: none !important; }
