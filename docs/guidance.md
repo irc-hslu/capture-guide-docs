@@ -28,9 +28,14 @@ Screenshot pending: the side rail on the right edge, with quality dots, next-vie
 
 **What you see.** While you record, a white ring around the Stop button fills up. It appears a little after you start, once the phone has its first coverage figure.
 
-**What it means.** The filled part is the share of the known surface that the phone has seen from at least 3 clearly different directions (at least 25° apart), with at least one photo taken from close enough. Photos taken while turning on the spot, or a few steps along the same line, count as one direction. The ring grows as you fill gaps. When a new segment starts, the ring disappears until the new segment has its own figure. With VoiceOver on, the Stop button reads the figure, for example "63 % covered".
+**What it means.** The filled part is the share of the known surface that the phone has seen from at least 3 clearly different directions, with at least one photo taken from close enough. [Quality dots](#quality-dots) show which spots still need work.
 
-**What to do.** Use it to judge how far along you are. It rarely reaches the full circle: corners you cannot reach and surfaces seen from one side keep it below that. "Room covered" in the guidance line is the better sign that you are done.
+- Different directions: at least 25° apart. Standing 2 m from a wall, about 1 m sideways gives a new direction. Turning on the spot gives none.
+- Close enough: within about 2 m with the main camera, about 1 m with the ultra-wide.
+
+The ring grows as you fill gaps. When a new segment starts, the ring disappears until the new segment has its own figure. With VoiceOver on, the Stop button reads the figure, for example "63 % covered".
+
+**What to do.** Use it to judge how far along you are. After a quick walk through the room in one pass, the ring often stays well below half. Walk around surfaces and look at them from new sides to fill it. It rarely reaches the full circle: corners you cannot reach and surfaces seen from one side keep it below that. "Room covered" in the guidance line is the better sign that you are done.
 
 ![Progress ring around the Stop button](img/guidance-progress-ring.png){ loading=lazy }
 /// caption
