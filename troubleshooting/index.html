@@ -338,7 +338,7 @@
   <span class="md-ellipsis">
     
   
-  Exporting
+  Your captures and exporting
 
     
   </span>
@@ -460,6 +460,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-camera-stopped" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The camera stopped
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#server-and-app-versions-do-not-match" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -538,10 +549,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#what-does-capture-without-server-do" class="md-nav__link">
+  <a href="#what-does-live-splat-off-do" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        What does "Capture without server" do?
+        What does Live splat "Off" do?
       </span>
     </span>
   </a>
@@ -683,6 +694,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-camera-stopped" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The camera stopped
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#server-and-app-versions-do-not-match" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -761,10 +783,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#what-does-capture-without-server-do" class="md-nav__link">
+  <a href="#what-does-live-splat-off-do" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        What does "Capture without server" do?
+        What does Live splat "Off" do?
       </span>
     </span>
   </a>
@@ -806,8 +828,9 @@
 
 <h1 id="troubleshooting-and-faq">Troubleshooting and FAQ</h1>
 <p>Common problems and what to do about them, plus short answers to the questions people ask first.</p>
+<p>The camera screen shows problems as dark banners near the top. The symbol tells you the kind: orange arrows when tracking is lost, a yellow tortoise for a hint, a red octagon for an error.</p>
 <h2 id="tracking-is-lost">Tracking is lost</h2>
-<p><strong>What you see.</strong> An orange banner under the top bar. It reads "Relocalising — move back to where you were. Starting a new segment in N s." with a "Start new segment here" button, or "Tracking restarting — a new segment starts when tracking returns."</p>
+<p><strong>What you see.</strong> A banner with orange arrows under the status pill. It reads "Relocalising — move back to where you were. Starting a new segment in N s." with a "Start new segment here" button, or "Tracking restarting — a new segment starts when tracking returns." A second banner may read "Move the phone slowly around to start tracking."</p>
 <p><strong>Cause.</strong> The phone lost track of where it is. Fast movement and scenes with little to see, such as a blank wall, are the usual reasons.</p>
 <p><strong>What to do.</strong></p>
 <ul>
@@ -817,59 +840,62 @@
 </ul>
 <p><a href="../capturing/#when-tracking-is-lost">Capturing a scene</a> explains segments in more detail. If the result looks slightly warped, with walls that bend, the camera positions have probably drifted (slid away from the truth) without the app noticing. In general, a shorter capture with plenty of detail in view drifts less.</p>
 <h2 id="keyframes-are-not-being-taken">Keyframes are not being taken</h2>
-<p><strong>What you see.</strong> The keyframe counter ("12 kf") stays where it is while you walk, and "blur" flashes red in the top bar.</p>
-<p><strong>Cause.</strong> Frames are blurrier than the blur limit, or you are standing still.</p>
-<p><strong>What to do.</strong> Walk and turn more slowly, add light, or raise "Blur limit" in the Settings sheet. <a href="../capturing/#walking-pace-and-distance">Capturing a scene</a> has the details.</p>
+<p><strong>What you see.</strong> The frame count in the status pill ("Tracking · 12 frames") stays where it is while you walk.</p>
+<p><strong>Cause.</strong> Frames are too blurry, or you are standing still. A dim room makes blur worse, because the camera exposes longer.</p>
+<p><strong>What to do.</strong> Walk and turn more slowly, and add light. If manual capture is on (the hand button on the side rail), the app takes keyframes only when you tap the shutter. <a href="../capturing/#walking-pace-and-distance">Capturing a scene</a> has the details.</p>
 <h2 id="no-guidance-appears">No guidance appears</h2>
 <p><strong>Cause.</strong> There are several possible reasons:</p>
 <ul>
-<li>You chose "Capture without server". That mode saves keyframes but draws no quality dots, hatching or targets. Only the keyframe frustums show.</li>
-<li>The first reconstruction does not exist yet. The line in the top bar reads "done – %" until it does, and next-view targets wait for 20 seconds after a segment starts.</li>
-<li>The layer is switched off, or the "Quality / Splats" control at the top is set to "Splats". The layers show only in the "Quality" view.</li>
-<li>Hatching also needs LiDAR. The badge in the top bar shows "LiDAR on" when it is in use.</li>
+<li>Nothing to judge yet. The dots, the map and the ring appear a little after you tap Record, and next-view targets wait for 20 seconds after a segment starts.</li>
+<li>The layer is switched off on the side rail (no white disc behind its button), or the splat view is on. The layers show only while the splat view is off.</li>
+<li>Hatching also needs LiDAR ("Use LiDAR" on) and a Live splat setting other than "Off".</li>
 </ul>
-<p><strong>What to do.</strong> Check the buttons on the right edge and the control at the top, and wait a little. <a href="../guidance/">Reading the guidance</a> describes each layer.</p>
+<p><strong>What to do.</strong> Check the buttons on the side rail and wait a little. <a href="../guidance/">Reading the guidance</a> describes each layer.</p>
 <h2 id="the-guidance-is-slow-and-the-phone-is-hot">The guidance is slow and the phone is hot</h2>
-<p><strong>What you see.</strong> The number next to "engine" in the top bar (for example "engine 8.4 s") keeps growing. It is the time since the last guidance update. The "it/s" figure drops, and a count such as "12 queued" grows. "queued" is the number of keyframes still waiting for the engine to take them in.</p>
-<p><strong>Cause.</strong> The phone is training the reconstruction while it also tracks, films and draws the preview. In general, an iPhone that gets hot slows itself down to cool off, so the guidance comes later.</p>
+<p><strong>What you see.</strong> The dots and targets lag behind what you have just captured, and the phone feels warm.</p>
+<p><strong>Cause.</strong> With Live splat on "This iPhone", the phone trains the 3D model while it also tracks, films and draws the guidance. In general, an iPhone that gets hot slows itself down to cool off, so the guidance comes later.</p>
 <p><strong>What to do.</strong></p>
 <ul>
 <li>In general, letting the phone cool down in the shade, out of its case, before you go on helps.</li>
-<li>Turn the dots off with the "Quality dots" button or "Show dots" in the Settings sheet. The preview stops, and the engine keeps training.</li>
-<li>Before the next capture, give the engine less work on the start screen, under "On this iPhone": a lower "Training cap", a smaller "Splat budget" or "Image size", a slower "Splat preview" or a lower "Preview resolution". They apply when you tap "Capture on this iPhone".</li>
+<li>Turn the dots off with the "Quality dots" button on the side rail; this saves drawing work.</li>
+<li>For the next capture, set Live splat to "Off" in Settings. The phone then builds no 3D model; the dots, the map, the ring and the next-view targets still work.</li>
 </ul>
-<p>If the top bar reads "engine stopped", with "Preview paused" in orange, the engine has stopped and the guidance with it. Tap "Finish" to save your photos, then "New capture" to start again. The button may stay on "Saved · training splat…", because the engine can no longer finish the 3D model.</p>
+<p>If a red banner starting with "Live splat:" appears, the 3D model has a problem. If the banner stays, tap Stop to save your photos; the line above Done may then read "Saved · no splat".</p>
+<h2 id="the-camera-stopped">The camera stopped</h2>
+<p><strong>What you see.</strong> A red banner starting with "Camera stopped:" and a "Restart camera" button.</p>
+<p><strong>Cause.</strong> The camera stopped during the capture.</p>
+<p><strong>What to do.</strong> Tap "Restart camera".</p>
 <h2 id="server-and-app-versions-do-not-match">"Server and app versions do not match"</h2>
-<p><strong>What you see.</strong> This red message replaces the server status in the top bar.</p>
-<p><strong>Cause.</strong> If you connect to a Mac companion, this means the Mac companion speaks a different version from the app. You see it when the first guidance update from that server arrives in a format the app does not know. If you only use "Capture on this iPhone", you will never see it, because no server is involved.</p>
-<p><strong>What to do.</strong> Update both the app and the Mac companion so they match. Until you do, the app cannot read the guidance from the Mac companion. Capture and export keep working.</p>
+<p><strong>What you see.</strong> This message in a red banner at the top.</p>
+<p><strong>Cause.</strong> You chose "Mac" under Live splat, and the Mac companion speaks a different version from the app. You see it when the first guidance update from the Mac arrives in a format the app does not know. With "This iPhone" or "Off" you never see it.</p>
+<p><strong>What to do.</strong> Update both the app and the Mac companion so they match. Until you do, the app cannot read the guidance from the Mac. Capture and export keep working.</p>
 <h2 id="the-export-is-missing-or-incomplete">The export is missing or incomplete</h2>
 <p><strong>What you see.</strong> One of these:</p>
 <ul>
-<li>The "Finish" button reads "Save failed — see error" and a red line shows the reason, such as "Export flush failed: …".</li>
-<li>It reads "Splat on phone · local save failed".</li>
-<li>A red line reads "Cannot create export folder segment-N: …" during the capture.</li>
-<li>The Capture Guide folder in Files lacks photos you expect.</li>
+<li>After Stop, the line above Done reads "Save failed · waiting for the splat", "Save failed · no splat", "Splat saved · photos failed" or "Splat on the Mac · photos failed".</li>
+<li>A red banner reads "Cannot create export folder segment-N: …" or "Export flush failed: …" during the capture.</li>
+<li>The capture's folder in Files lacks photos you expect.</li>
 </ul>
-<p><strong>Cause.</strong> The phone could not write the files. In general, the usual cause is a full phone. Closing the app before "Finish" can also leave the newest photos out of <code>transforms.json</code>.</p>
+<p><strong>Cause.</strong> The phone could not write the files. In general, the usual cause is a full phone. Closing the app before you tap Stop can also leave the newest photos out of <code>transforms.json</code>.</p>
 <p><strong>What to do.</strong></p>
 <ul>
 <li>Free up space on the phone and capture again.</li>
 <li>Look in Files under On My iPhone, then "Capture Guide", not iCloud Drive.</li>
-<li>Always tap "Finish" before you leave. Wait until the button reads "Saved · splat on phone" if you want the <code>splat.ply</code> too.</li>
-<li>If <code>transforms.json</code> misses the newest photos, they are still in <code>images/</code>. <a href="../exporting/#where-your-captures-are-stored">Exporting</a> explains the folder layout.</li>
+<li>Always tap Stop before you leave the app. Wait until the button reads "Done" if you want the <code>splat.ply</code> too.</li>
+<li>If <code>transforms.json</code> misses the newest photos, they are still in <code>images/</code>. <a href="../exporting/#where-your-captures-are-stored">Your captures and exporting</a> explains the folder layout.</li>
 </ul>
+<p>"Saved · no splat" on its own means the photos are saved but the 3D model could not be written. The capture is still complete for export.</p>
 <h2 id="faq">FAQ</h2>
 <h3 id="which-iphones-does-it-work-on">Which iPhones does it work on?</h3>
 <p>Capture Guide was tested on an iPhone 14 Pro. It needs iOS 18 or newer and a phone that supports ARKit, Apple's augmented reality framework. We list no other models.</p>
 <h3 id="do-i-need-a-lidar-sensor">Do I need a LiDAR sensor?</h3>
-<p>No. The app captures without it. LiDAR adds a depth map to each keyframe and makes the grey hatching possible. A badge in the top bar shows "LiDAR on", "LiDAR off" or "LiDAR n/a".</p>
+<p>No. The app captures without it. LiDAR adds a depth map to each keyframe and makes the grey hatching possible. On a phone without the sensor, "Use LiDAR" in Settings is greyed out.</p>
 <h3 id="do-i-need-an-internet-connection-or-wi-fi">Do I need an internet connection or Wi-Fi?</h3>
-<p>Not for "Capture on this iPhone". The engine runs on the phone, and the app has no part that goes online. Wi-Fi is used only to look for and talk to the Mac companion. That is why iOS asks for permission to use the local network when the app opens.</p>
+<p>No. With Live splat on "This iPhone" or "Off", the capture runs entirely on the phone. Two things use a network. The "Mac" option looks for the Mac companion on your local network, which is why iOS asks for that permission. And to name a capture after its place, the app asks Apple's map service for the place name, which sends the capture's coordinates to Apple. Without a connection the capture is named by date and time, and it gets the place name the next time you open it online. Without location access it keeps the date and time.</p>
 <h3 id="where-is-my-data-stored">Where is my data stored?</h3>
-<p>On the phone, in the Capture Guide folder of the Files app. The app sends nothing anywhere by itself. Only when you connect it to a Mac companion do the keyframes go to that Mac, over your network.</p>
-<h3 id="what-does-capture-without-server-do">What does "Capture without server" do?</h3>
-<p>It saves the keyframes into the same folder but runs no engine, so there are no quality dots, hatching or targets. Keyframe frustums still show. You can export and train as usual.</p>
+<p>On the phone, in the Capture Guide folder of the Files app. The app sends your photos nowhere by itself. With Live splat on "Mac", the keyframes go to that Mac over your network. For the place name, the coordinates go to Apple (see above).</p>
+<h3 id="what-does-live-splat-off-do">What does Live splat "Off" do?</h3>
+<p>The phone builds no 3D model, which keeps it cooler. The capture saves the same photos, and the dots, the map, the ring and the next-view targets still guide you. There is no grey hatching, and the capture's Splat tab says "Live splat was off". You can export and train as usual.</p>
 <h3 id="is-there-a-mac-app">Is there a Mac app?</h3>
 <p>A Mac companion app is planned. Capture Guide does not need it.</p>
 
@@ -909,7 +935,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../exporting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Exporting">
+          <a href="../exporting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Your captures and exporting">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
@@ -919,7 +945,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Exporting
+                Your captures and exporting
               </div>
             </div>
           </a>

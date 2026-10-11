@@ -29,7 +29,7 @@
     
     
       
-        <title>Exporting - Capture Guide</title>
+        <title>Your captures and exporting - Capture Guide</title>
       
     
     
@@ -120,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exporting
+              Your captures and exporting
             
           </span>
         </div>
@@ -347,7 +347,7 @@
   <span class="md-ellipsis">
     
   
-  Exporting
+  Your captures and exporting
 
     
   </span>
@@ -364,7 +364,7 @@
   <span class="md-ellipsis">
     
   
-  Exporting
+  Your captures and exporting
 
     
   </span>
@@ -388,6 +388,28 @@
       On this page
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#your-captures" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Your captures
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#looking-at-a-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Looking at a capture
+      </span>
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#where-your-captures-are-stored" class="md-nav__link">
@@ -573,6 +595,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#your-captures" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Your captures
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#looking-at-a-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Looking at a capture
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#where-your-captures-are-stored" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -672,20 +716,62 @@
                   
 
 
-<h1 id="exporting">Exporting</h1>
-<p>How to get a capture off your iPhone and train it into a 3D Gaussian Splatting model on your computer, using the free Spirula Studio app.</p>
+<h1 id="your-captures-and-exporting">Your captures and exporting</h1>
+<p>How to find your captures on the iPhone, look through them, share them, and train one into a 3D Gaussian Splatting model on your computer with the free Spirula Studio app.</p>
+<h2 id="your-captures">Your captures</h2>
+<p>Tap the picture at the bottom left of the camera screen to see your captures, newest first. Each card shows four photos from the capture with its name, date and place, the number of frames and its size. "Close" at the top left takes you back to the camera.</p>
+<ul>
+<li><strong>Names</strong>: a capture is named after its place and time, for example "Main Street, Lucerne · 16:45", or after its date and time when there is no place. To rename it, open it and tap its name at the top.</li>
+<li><strong>Deleting</strong>: tap "Select", tap the captures you want to remove (a check mark appears at the bottom right of each), then tap "Delete" at the bottom and confirm. This cannot be undone.</li>
+<li>At the larger accessibility text sizes the cards are shown one per row.</li>
+</ul>
+<figure>
+<p><img alt="Your captures: cards with photos, name, date, place, frames and size" loading="lazy" src="../img/exporting-library.jpg" width="320" /></p>
+<figcaption>
+<p>Your captures, newest first.</p>
+</figcaption>
+</figure>
+<h2 id="looking-at-a-capture">Looking at a capture</h2>
+<p>Tap a card to open it. The back button at the top left takes you back to your captures; it shows a chevron, with the word "Captures" on iOS 18. The share button at the top right is described <a href="#getting-captures-off-the-phone">below</a>. The capture has three tabs.</p>
+<p><strong>Overview</strong>: the capture seen from above. Grey points are the surfaces, and a coloured line from a dot to an arrowhead is the path you walked, one colour per segment. Pinch to zoom, drag to move, double-tap to reset. A capture without saved camera positions shows "No top view" instead. Below it, the facts follow one per row: date and time, place, number of frames, number of segments and size. A small square map with a pin sits next to them and shows where you were; at the larger accessibility text sizes it sits above them, and a capture without a recorded place has no map. A strip of photos follows. "Done" at the bottom takes you back to the camera.</p>
+<p><strong>Frames</strong>: every keyframe, segment by segment. Tap one to see it large; "Exclude" leaves it out of the export, "Restore" brings it back. To change several at once, tap "Select" above the grid, tap the frames, then "Exclude" or "Restore" at the bottom. Excluded frames are greyed out and marked with a crossed-out eye. Nothing is deleted: the photo stays on the phone, and only the list of photos that exports read (<code>transforms.json</code>) leaves it out. If the 3D model was built before you excluded frames, a note says that it still contains them.</p>
+<p><strong>Splat</strong>: the 3D model the phone built, if there is one. Drag to orbit, pinch to zoom. When more than one segment has a model, a picker above it chooses the segment. Without a model, the tab says why: "Live splat was off", "Built on the Mac" or "No splat yet".</p>
+<figure>
+<p><img alt="Overview of a capture: top view, map, facts and Done" loading="lazy" src="../img/exporting-viewer-overview.jpg" width="320" /></p>
+<figcaption>
+<p>The Overview tab.</p>
+</figcaption>
+</figure>
+<figure>
+<p><img alt="Frames tab with two excluded frames" loading="lazy" src="../img/exporting-viewer-frames.jpg" width="320" /></p>
+<figcaption>
+<p>The Frames tab; the first two frames are excluded.</p>
+</figcaption>
+</figure>
+<figure>
+<p><img alt="Splat tab: the 3D model in an orbit view" loading="lazy" src="../img/exporting-viewer-splat.jpg" width="320" /></p>
+<figcaption>
+<p>The Splat tab.</p>
+</figcaption>
+</figure>
 <h2 id="where-your-captures-are-stored">Where your captures are stored</h2>
-<p>Every capture is saved on the phone while you walk, with nothing to switch on. Open the Files app and go to On My iPhone, then "Capture Guide". Each capture is a folder named after its start time in UTC, for example <code>2026-10-07T12-30-00Z</code>. Inside it you find one folder per segment: <code>segment-0</code>, <code>segment-1</code> and so on, plus a file <code>overlay-metrics.jsonl</code>, a working file you can ignore. A segment is one continuous stretch of capture in one coordinate system (<a href="../capturing/#when-tracking-is-lost">Capturing a scene</a> explains when a new one starts).</p>
+<p>Every capture is saved on the phone while you record, with nothing to switch on. Open the Files app and go to On My iPhone, then "Capture Guide". Each capture is a folder named after its start time in UTC, for example <code>2026-10-07T12-30-00Z</code>. Inside it you find:</p>
+<ul>
+<li><code>capture.json</code>: the capture's name, place and which frames you excluded.</li>
+<li><code>thumb-v2.jpg</code>: the picture on the capture's card. Captures from older versions of the app also have a <code>thumb.jpg</code>, which you can ignore.</li>
+<li><code>overlay-metrics.jsonl</code>: a working file you can ignore.</li>
+<li>One folder per segment: <code>segment-0</code>, <code>segment-1</code> and so on. A segment is one continuous stretch of capture in one coordinate system (<a href="../capturing/#when-tracking-is-lost">Capturing a scene</a> explains when a new one starts).</li>
+</ul>
 <p>A segment folder holds:</p>
 <ul>
-<li><code>images/</code>: the full-resolution photo of every keyframe.</li>
-<li><code>transforms.json</code>: where the camera was for each photo, and its lens settings.</li>
+<li><code>images/</code>: the full-resolution photo of every keyframe. The photos are stored as the camera sensor records them, turned sideways; the app shows them upright, and training software uses them as they are.</li>
+<li><code>transforms.json</code>: where the camera was for each photo, and its lens settings. Frames you excluded are left out of it. Once you exclude a frame, <code>transforms.unfiltered.json</code> keeps the full list.</li>
 <li><code>depth/</code>: the LiDAR depth maps. The folder exists in every segment and stays empty without LiDAR.</li>
 <li><code>points.ply</code>: a sparse cloud of coloured points the phone tracked.</li>
-<li><code>splat.ply</code>: the 3D model (made of many splats) the phone trained while you captured. It is written after you tap "Finish", once training ends and the button reads "Saved · splat on phone". It is there only for the segment you were in at that moment, and only for captures on this iPhone.</li>
+<li><code>splat.ply</code>: the 3D model (made of many splats) the phone trained while you captured, written after you tap Stop or when a new segment starts. It is there only for captures with Live splat on "This iPhone".</li>
 <li><code>overlap_audit.json</code> and <code>wire/</code>: working files of the app that you can ignore.</li>
 </ul>
-<p>Tap "Finish" before you leave the app. While you capture, the photos are written straight away, but the list in <code>transforms.json</code> is updated after every tenth keyframe and when a segment ends. Finishing updates it too. If the app closes in between, the newest photos stay in <code>images/</code> but are missing from the list. Sometimes a new segment starts just before "Finish". It leaves an empty <code>segment-N</code> folder behind that you can skip.</p>
+<p>Tap Stop before you leave the app. While you capture, the photos are written straight away, but the list in <code>transforms.json</code> is updated after every tenth keyframe and when a segment ends. Stopping updates it too. If the app closes in between, the newest photos stay in <code>images/</code> but are missing from the list. Sometimes a new segment starts just before Stop. It leaves an empty <code>segment-N</code> folder behind that you can skip.</p>
 <figure>
 <p><img alt="The Capture Guide folder in the Files app, with a capture folder open" loading="lazy" src="../img/exporting-files-app.png" /></p>
 <figcaption>
@@ -693,7 +779,14 @@
 </figcaption>
 </figure>
 <h2 id="getting-captures-off-the-phone">Getting captures off the phone</h2>
-<p>The folder is shared with the Files app, so the usual iOS ways work. Press and hold a capture folder in Files to copy it to iCloud Drive or another location, or use "Share" to send it with AirDrop. With the phone connected to a Mac by cable, the Capture Guide folder also shows in Finder under the phone's file sharing. A capture can be large, because it holds full-resolution photos.</p>
+<p>The quickest way is the share button at the top right of an open capture. It packs the capture into one zip file, without the app's working copies in <code>wire/</code>, and opens the iOS share sheet: send it with AirDrop to your Mac, save it to Files, or mail it. Unzipped, it gives the capture folder with its segment folders, ready for Capture to COLMAP below. The button waits until the capture is saved on the iPhone.</p>
+<figure>
+<p><img alt="Share sheet with the capture's zip file" loading="lazy" src="../img/exporting-share-sheet.png" /></p>
+<figcaption>
+<p>Screenshot pending: the iOS share sheet after tapping the share button, with the capture's zip file and AirDrop.</p>
+</figcaption>
+</figure>
+<p>The folder is also shared with the Files app, so the usual iOS ways work. Press and hold a capture folder in Files to copy it to iCloud Drive or another location. With the phone connected to a Mac by cable, the Capture Guide folder also shows in Finder under the phone's file sharing. A capture can be large, because it holds full-resolution photos.</p>
 <p>Copy the whole capture folder, or at least the segment folders you want. A segment folder has to stay in one piece, because the photos and <code>transforms.json</code> belong together.</p>
 <h2 id="choosing-a-segment">Choosing a segment</h2>
 <p>Each segment has its own coordinate system, so you train each one separately; they cannot be joined into one model. In general, start with the segment that has the most photos.</p>
