@@ -1,21 +1,64 @@
-# Exporting
+# Your captures and exporting
 
-How to get a capture off your iPhone and train it into a 3D Gaussian Splatting model on your computer, using the free Spirula Studio app.
+How to find your captures on the iPhone, look through them, share them, and train one into a 3D Gaussian Splatting model on your computer with the free Spirula Studio app.
+
+## Your captures
+
+Tap the picture at the bottom left of the camera screen to see your captures, newest first. Each card shows four photos from the capture with its name, date and place, the number of frames and its size. "Close" at the top left takes you back to the camera.
+
+- **Names**: a capture is named after its place and time, for example "Main Street, Lucerne · 16:45", or after its date and time when there is no place. To rename it, open it and tap its name at the top.
+- **Deleting**: tap "Select", tap the captures you want to remove (a check mark appears at the bottom right of each), then tap "Delete" at the bottom and confirm. This cannot be undone.
+- At the larger accessibility text sizes the cards are shown one per row.
+
+![Your captures: cards with photos, name, date, place, frames and size](img/exporting-library.jpg){ width="320" loading=lazy }
+/// caption
+Your captures, newest first.
+///
+
+## Looking at a capture
+
+Tap a card to open it. The back button at the top left takes you back to your captures; it shows a chevron, with the word "Captures" on iOS 18. The share button at the top right is described [below](#getting-captures-off-the-phone). The capture has three tabs.
+
+**Overview**: the capture seen from above. Grey points are the surfaces, and a coloured line from a dot to an arrowhead is the path you walked, one colour per segment. Pinch to zoom, drag to move, double-tap to reset. A capture without saved camera positions shows "No top view" instead. Below it, the facts follow one per row: date and time, place, number of frames, number of segments and size. A small square map with a pin sits next to them and shows where you were; at the larger accessibility text sizes it sits above them, and a capture without a recorded place has no map. A strip of photos follows. "Done" at the bottom takes you back to the camera.
+
+**Frames**: every keyframe, segment by segment. Tap one to see it large; "Exclude" leaves it out of the export, "Restore" brings it back. To change several at once, tap "Select" above the grid, tap the frames, then "Exclude" or "Restore" at the bottom. Excluded frames are greyed out and marked with a crossed-out eye. Nothing is deleted: the photo stays on the phone, and only the list of photos that exports read (`transforms.json`) leaves it out. If the 3D model was built before you excluded frames, a note says that it still contains them.
+
+**Splat**: the 3D model the phone built, if there is one. Drag to orbit, pinch to zoom. When more than one segment has a model, a picker above it chooses the segment. Without a model, the tab says why: "Live splat was off", "Built on the Mac" or "No splat yet".
+
+![Overview of a capture: top view, map, facts and Done](img/exporting-viewer-overview.jpg){ width="320" loading=lazy }
+/// caption
+The Overview tab.
+///
+
+![Frames tab with two excluded frames](img/exporting-viewer-frames.jpg){ width="320" loading=lazy }
+/// caption
+The Frames tab; the first two frames are excluded.
+///
+
+![Splat tab: the 3D model in an orbit view](img/exporting-viewer-splat.jpg){ width="320" loading=lazy }
+/// caption
+The Splat tab.
+///
 
 ## Where your captures are stored
 
-Every capture is saved on the phone while you walk, with nothing to switch on. Open the Files app and go to On My iPhone, then "Capture Guide". Each capture is a folder named after its start time in UTC, for example `2026-10-07T12-30-00Z`. Inside it you find one folder per segment: `segment-0`, `segment-1` and so on, plus a file `overlay-metrics.jsonl`, a working file you can ignore. A segment is one continuous stretch of capture in one coordinate system ([Capturing a scene](capturing.md#when-tracking-is-lost) explains when a new one starts).
+Every capture is saved on the phone while you record, with nothing to switch on. Open the Files app and go to On My iPhone, then "Capture Guide". Each capture is a folder named after its start time in UTC, for example `2026-10-07T12-30-00Z`. Inside it you find:
+
+- `capture.json`: the capture's name, place and which frames you excluded.
+- `thumb-v2.jpg`: the picture on the capture's card. Captures from older versions of the app also have a `thumb.jpg`, which you can ignore.
+- `overlay-metrics.jsonl`: a working file you can ignore.
+- One folder per segment: `segment-0`, `segment-1` and so on. A segment is one continuous stretch of capture in one coordinate system ([Capturing a scene](capturing.md#when-tracking-is-lost) explains when a new one starts).
 
 A segment folder holds:
 
-- `images/`: the full-resolution photo of every keyframe.
-- `transforms.json`: where the camera was for each photo, and its lens settings.
+- `images/`: the full-resolution photo of every keyframe. The photos are stored as the camera sensor records them, turned sideways; the app shows them upright, and training software uses them as they are.
+- `transforms.json`: where the camera was for each photo, and its lens settings. Frames you excluded are left out of it. Once you exclude a frame, `transforms.unfiltered.json` keeps the full list.
 - `depth/`: the LiDAR depth maps. The folder exists in every segment and stays empty without LiDAR.
 - `points.ply`: a sparse cloud of coloured points the phone tracked.
-- `splat.ply`: the 3D model (made of many splats) the phone trained while you captured. It is written after you tap "Finish", once training ends and the button reads "Saved · splat on phone". It is there only for the segment you were in at that moment, and only for captures on this iPhone.
+- `splat.ply`: the 3D model (made of many splats) the phone trained while you captured, written after you tap Stop or when a new segment starts. It is there only for captures with Live splat on "This iPhone".
 - `overlap_audit.json` and `wire/`: working files of the app that you can ignore.
 
-Tap "Finish" before you leave the app. While you capture, the photos are written straight away, but the list in `transforms.json` is updated after every tenth keyframe and when a segment ends. Finishing updates it too. If the app closes in between, the newest photos stay in `images/` but are missing from the list. Sometimes a new segment starts just before "Finish". It leaves an empty `segment-N` folder behind that you can skip.
+Tap Stop before you leave the app. While you capture, the photos are written straight away, but the list in `transforms.json` is updated after every tenth keyframe and when a segment ends. Stopping updates it too. If the app closes in between, the newest photos stay in `images/` but are missing from the list. Sometimes a new segment starts just before Stop. It leaves an empty `segment-N` folder behind that you can skip.
 
 ![The Capture Guide folder in the Files app, with a capture folder open](img/exporting-files-app.png){ loading=lazy }
 /// caption
@@ -24,7 +67,14 @@ Screenshot pending: the Files app at On My iPhone, "Capture Guide", with one dat
 
 ## Getting captures off the phone
 
-The folder is shared with the Files app, so the usual iOS ways work. Press and hold a capture folder in Files to copy it to iCloud Drive or another location, or use "Share" to send it with AirDrop. With the phone connected to a Mac by cable, the Capture Guide folder also shows in Finder under the phone's file sharing. A capture can be large, because it holds full-resolution photos.
+The quickest way is the share button at the top right of an open capture. It packs the capture into one zip file, without the app's working copies in `wire/`, and opens the iOS share sheet: send it with AirDrop to your Mac, save it to Files, or mail it. Unzipped, it gives the capture folder with its segment folders, ready for Capture to COLMAP below. The button waits until the capture is saved on the iPhone.
+
+![Share sheet with the capture's zip file](img/exporting-share-sheet.png){ loading=lazy }
+/// caption
+Screenshot pending: the iOS share sheet after tapping the share button, with the capture's zip file and AirDrop.
+///
+
+The folder is also shared with the Files app, so the usual iOS ways work. Press and hold a capture folder in Files to copy it to iCloud Drive or another location. With the phone connected to a Mac by cable, the Capture Guide folder also shows in Finder under the phone's file sharing. A capture can be large, because it holds full-resolution photos.
 
 Copy the whole capture folder, or at least the segment folders you want. A segment folder has to stay in one piece, because the photos and `transforms.json` belong together.
 

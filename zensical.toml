@@ -12,7 +12,7 @@ nav = [
   { "Getting started" = "getting-started.md" },
   { "Capturing a scene" = "capturing.md" },
   { "Reading the guidance" = "guidance.md" },
-  { "Exporting" = "exporting.md" },
+  { "Your captures and exporting" = "exporting.md" },
   { "Troubleshooting and FAQ" = "troubleshooting.md" },
   { "Download" = "exporting.md#turning-a-segment-into-a-colmap-model" },
 ]

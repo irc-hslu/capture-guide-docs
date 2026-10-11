@@ -1,43 +1,71 @@
 # Getting started
 
-What you need and how to set up Capture Guide on your iPhone.
+What you need, how the camera screen is laid out, and your first capture.
 
 ## Requirements
 
 - An iPhone with iOS 18 or newer. Capture Guide was tested on an iPhone 14 Pro.
-- A LiDAR sensor is optional. With LiDAR, the app saves a depth map (a distance for each pixel) with each photo it keeps and draws grey hatching over the surfaces it sees that the reconstruction does not cover yet. Without LiDAR the capture still works, but neither of those is available. A badge in the top bar shows one of three labels:
-    - "LiDAR on": the sensor is in use.
-    - "LiDAR off": the phone has the sensor, but you switched "Use LiDAR" off.
-    - "LiDAR n/a": the phone has no LiDAR sensor.
+- A LiDAR sensor is optional. With LiDAR, the app saves a depth map (a distance for each pixel) with each photo it keeps and draws grey hatching over surfaces the reconstruction does not cover yet. Without LiDAR the capture still works, without those two. On a phone without the sensor, "Use LiDAR" in Settings is greyed out.
 
 ## Install
 
 !!! note "Coming soon"
     Capture Guide will be available through TestFlight or the App Store. The links will appear here.
 
-When the app opens for the first time, iOS asks whether it may use the local network. The app uses it only to look for the optional Mac companion, and "Capture on this iPhone" does not depend on it. The camera prompt comes later, when you start your first capture.
+Capture Guide opens straight into the camera, so iOS asks for camera access the first time the camera starts. iOS also asks whether the app may use the local network. The app uses it only to look for a Mac running the planned companion app; building the 3D model on this iPhone does not need it.
+
+The first time you tap Record, iOS asks for your location. The app saves where a capture was made, so it can name the capture after the place and show it on a map. Recording starts right away, whatever you answer.
+
+## The camera screen
+
+![Camera screen before recording: chip, Record button, side rail, captures and gear](img/getting-started-camera.png){ loading=lazy }
+/// caption
+Screenshot pending: the camera screen before recording, with the side rail on the right, the "Splat: iPhone" chip above the Record button, the newest capture at the bottom left and the gear at the bottom right.
+///
+
+- **Record**, at the bottom in the middle, starts a capture. Nothing is saved before you tap it.
+- **The Live splat chip** above Record shows where the 3D model is built while you capture, for example "Splat: iPhone". The model is made of many splats, tiny blobs of colour. Tap the chip to change where it is built.
+- **Your captures**: the picture at the bottom left shows your newest capture. Tap it to see all of them. It appears after your first capture.
+- **Settings**: the gear at the bottom right.
+- **The side rail** on the right edge has one button per guidance layer. A white disc behind a button means that layer is on. [Reading the guidance](guidance.md#the-side-rail) lists the buttons.
+
+The controls on the camera screen stay dark, also when your iPhone is set to Light Mode, as in the Camera app.
 
 ## Your first capture
 
-The phone runs the reconstruction itself, so you need no other device. Ignore the server section at the top of the start screen.
+The phone builds the 3D model itself, so you need no other device.
 
-1. Open Capture Guide. The start screen is titled "Capture Guide".
-2. Under "On this iPhone", the app tunes its engine for your phone. A row shows "Preparing engine…" and then "Engine ready". A capture started after that begins with the engine tuned, so give it a moment.
-3. Below the "Capture on this iPhone" button, in its own section, leave "Use LiDAR" on if your phone has it. The switch is greyed out on phones without LiDAR.
-4. Tap "Capture on this iPhone". The first time, iOS asks for camera access; capture needs it.
-5. Walk slowly and keep the camera pointed at the scene. Each time the app takes a keyframe, the screen edge flashes white once and a thumbnail appears above the bottom buttons. The counter in the top bar ("12 kf", for keyframes: the photos the app keeps) goes up. [Capturing a scene](capturing.md) explains how to walk.
-6. Watch the guidance and walk to the places it points out. [Reading the guidance](guidance.md) explains each element.
-7. When "Room covered" appears, or when you have seen everything you want, tap "Finish". The button reads "Finishing…", then "Saved · training splat…" (the phone is still training the 3D model, which is made of many splats, tiny blobs of colour) and finally "Saved · splat on phone".
-8. Tap "New capture" to return to the start screen, or leave the app. Your capture stays in the Capture Guide folder in the Files app. [Exporting](exporting.md) shows how to use it. To train a 3D model on a Mac afterwards, convert a segment with the [Capture to COLMAP](exporting.md#turning-a-segment-into-a-colmap-model) app.
+1. Open Capture Guide. While the screen reads "Preparing splat engine…", the app tunes its engine for your phone. The camera appears when it is ready.
+2. Leave the chip on "Splat: iPhone".
+3. Tap Record. A pill at the top shows the tracking state and a count, for example "Tracking · 0 frames". The number counts keyframes, the photos the app keeps.
+4. Walk slowly and keep the camera on the scene. Each time the app takes a keyframe, a white border flashes once around the screen. [Capturing a scene](capturing.md) explains how to walk.
+5. Follow the guidance. A white ring around the Stop button fills as more of the scene is covered; it appears once the phone has a first coverage figure. [Reading the guidance](guidance.md) explains each part.
+6. When "Room covered" appears, or when you have everything you want, tap Stop.
+7. The capture opens. While the phone still writes the 3D model, the button at the bottom reads "Saving splat…". Then it reads "Done", and the line above it says what was saved, for example "Saved with splat".
+8. Tap Done to go back to the camera. The capture stays on the phone: open it from the picture at the bottom left, or find it in the Files app. [Your captures and exporting](exporting.md) shows what you can do with it.
 
-![Start screen with the On this iPhone section](img/getting-started-start-screen.png){ loading=lazy }
+![Camera screen while recording: status pill, guidance line, map and progress ring](img/getting-started-recording.png){ loading=lazy }
 /// caption
-Screenshot pending: the start screen with the "On this iPhone" section with "Engine ready" and the "Capture on this iPhone" button.
+Screenshot pending: the camera screen while recording, with the status pill and the guidance line at the top, the quality dots on the scene, the round map at the bottom left and the ring around the Stop button.
 ///
 
-![Capture screen with the top bar, quality dots and bottom buttons](img/getting-started-capture-hud.png){ loading=lazy }
+## Settings
+
+Tap the gear, or the Live splat chip. Settings that change how the camera runs can't be changed during a capture; they read "Stop to change." until you tap Stop.
+
+- **Live splat**: where the 3D model is built while you capture.
+    - "This iPhone" is the default. If the phone cannot start its engine, the chip adds "(unavailable)".
+    - "Mac" is for the planned Mac companion app. Macs found on your network appear in a list, and you can type an address. If no Mac answers within a few seconds, the capture runs without a 3D model and the chip adds "(not found)".
+    - "Off" builds no 3D model and keeps the phone cooler. The guidance still works, without the grey hatching.
+- **Use LiDAR**: on by default on phones with the sensor.
+- **Scene**: "Indoor" or "Outdoor". Outdoor trains the model with a sky background and uses larger cells, for scenes that reach far away.
+- **Photo overlap**: how much of its view a new keyframe may share with the one before. "Splatting 60 %" is the default. "SfM-safe 72 %" takes more photos, which suits photogrammetry software.
+- **Guidance sounds** and **Proximity ticks**: see [Guidance sounds and taps](guidance.md#guidance-sounds-and-taps).
+- **Coverage colours**: the colours of the quality dots and the map. "Blue-Orange" is the default; "Cividis" runs from dark blue to yellow.
+
+![Settings with Live splat, Capture, Photos and Guidance](img/getting-started-settings.jpg){ width="320" loading=lazy }
 /// caption
-Screenshot pending: the capture screen with the top bar (LiDAR badge and keyframe count), the overlay on the scene, the gear button and the Finish button at the bottom.
+Settings; some rows explain themselves in a grey second line.
 ///
 
 !!! info

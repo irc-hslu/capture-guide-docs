@@ -9,7 +9,7 @@ flowchart LR
     A[Walk and capture] --> B[The phone trains a reconstruction]
     B --> C[Guidance shows weak spots]
     C -->|Walk there| A
-    A -->|Scene covered| D[Finish and export]
+    A -->|Scene covered| D[Stop and export]
 ```
 
 ![Poster frame of a short clip: guidance in AR](media/home-guidance.png){ loading=lazy }
@@ -22,5 +22,5 @@ Clip pending: guidance in AR
 - [Getting started](getting-started.md): what you need, and your first capture.
 - [Capturing a scene](capturing.md): how to walk through a scene and which frames the app skips.
 - [Reading the guidance](guidance.md): what the coloured dots and the yellow camera tell you.
-- [Exporting](exporting.md): getting a capture off the phone and training it.
+- [Your captures and exporting](exporting.md): looking through captures on the phone, getting them off it and training them.
 - [Troubleshooting and FAQ](troubleshooting.md): what to do when tracking is lost or the phone runs hot, and what the error messages mean.
