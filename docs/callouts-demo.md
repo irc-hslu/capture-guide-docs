@@ -59,3 +59,25 @@ The paragraph after figure two must start below label seven.
 </figure>
 
 The paragraph after figure three.
+
+## Broken image
+
+<figure class="callouts" markdown>
+![Missing screenshot](img/does-not-exist.jpg)
+
+1. **First**: the image is missing, so this stays a plain list.
+   { data-x="50" data-y="10" data-side="l" }
+2. **Second**: no overlap.
+   { data-x="50" data-y="50" data-side="r" }
+
+</figure>
+
+## Malformed anchor file
+
+<figure class="callouts" markdown>
+![Library screen](img/callouts-demo-bad.jpg)
+
+1. **Top**: the JSON has no image size, so the figure falls back to markers.
+   { data-anchor="top" data-side="l" }
+
+</figure>

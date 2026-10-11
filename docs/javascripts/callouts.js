@@ -19,11 +19,18 @@
     return (img.currentSrc || img.src).replace(/\.(png|jpe?g|webp)(\?.*)?$/i, ".json");
   }
 
+  // The parsed anchor file, or null unless it has a positive image size and an anchors object.
+  function validAnchors(a) {
+    const ok = n => Number.isFinite(n) && n > 0;
+    if (!a || !a.image || !ok(a.image.w) || !ok(a.image.h)) return null;
+    return a.anchors && typeof a.anchors === "object" ? a : null;
+  }
+
   async function loadAnchors(fig, img) {
     if (!fig.querySelector("li[data-anchor]")) return null;
     try {
       const r = await fetch(anchorsUrl(img));
-      return r.ok ? await r.json() : null;
+      return r.ok ? validAnchors(await r.json()) : null;
     } catch (e) {
       return null;
     }
@@ -82,6 +89,13 @@
   }
 
   function draw(fig, img, shot, svg, items, markers, anchors) {
+    svg.replaceChildren();
+    items.forEach(li => { li.style.top = ""; });
+    fig.style.minHeight = "";
+    if (!img.complete || !img.naturalWidth) {
+      fig.classList.remove("callouts--wide", "callouts--narrow");
+      return;
+    }
     const targets = items.map(li => target(li, anchors));
     const W = fig.clientWidth;
     const landscape = fig.classList.contains("callouts--landscape");
@@ -91,10 +105,6 @@
     fig.style.setProperty("--shot-w", shotW + "px");
     fig.classList.toggle("callouts--wide", wide);
     fig.classList.toggle("callouts--narrow", !wide);
-    svg.replaceChildren();
-    items.forEach(li => { li.style.top = ""; });
-    fig.style.minHeight = "";
-    if (!img.complete || !img.naturalWidth) return;
     if (!wide) {
       placeMarkers(items, markers, targets);
       return;
