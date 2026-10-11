@@ -28,7 +28,7 @@ Screenshot pending: the side rail on the right edge, with quality dots, next-vie
 
 **What you see.** While you record, a white ring around the Stop button fills up. It appears a little after you start, once the phone has its first coverage figure.
 
-**What it means.** The filled part is the share of the known surface that is nearly fully covered: the surface is split into small patches, and a patch counts once its coverage is above 80% ([Quality dots](#quality-dots) explains coverage). The ring grows as you fill gaps. When a new segment starts, the ring disappears until the new segment has its own figure. With VoiceOver on, the Stop button reads the figure, for example "63 % covered".
+**What it means.** The filled part is the share of the known surface that the phone has seen from at least 3 clearly different directions (at least 25° apart), with at least one photo taken from close enough. Photos taken while turning on the spot, or a few steps along the same line, count as one direction. The ring grows as you fill gaps. When a new segment starts, the ring disappears until the new segment has its own figure. With VoiceOver on, the Stop button reads the figure, for example "63 % covered".
 
 **What to do.** Use it to judge how far along you are. It rarely reaches the full circle: corners you cannot reach and surfaces seen from one side keep it below that. "Room covered" in the guidance line is the better sign that you are done.
 
@@ -41,7 +41,7 @@ Screenshot pending: the Stop button with its white ring about two-thirds filled.
 
 **What you see.** Small dots floating over the scene, on the surfaces the phone knows. With the default colour scheme, "Blue-Orange", a light blue dot is well covered, the colour turns darker as coverage gets worse, and orange means the spot needs work. The map legend ([below](#minimap)) always shows the scheme you picked, from "good" to "needs work".
 
-**What it means.** A spot gets full marks when the phone has seen it in about 8 photos, taken from a spread of directions, with at least one of them close enough to show it sharply. Fewer photos, or photos from one side only, leave the dot towards orange. The colours change as the phone takes new keyframes.
+**What it means.** A spot gets full marks once the phone has seen it from 3 clearly different directions (at least 25° apart) and from close enough at least once. Fewer directions, or only distant photos, leave the dot towards orange. Walk around a surface rather than along it to fill corners and edges. The colours change as the phone takes new keyframes.
 
 **What to do.** Walk towards the orange dots and look at them from a new side. Moving sideways helps more than turning on the spot, for the reasons given in [Capturing a scene](capturing.md#angles).
 
