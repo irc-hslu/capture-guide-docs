@@ -17,6 +17,7 @@ nav = [
   { "Download" = "exporting.md#turning-a-segment-into-a-colmap-model" },
 ]
 extra_css = ["stylesheets/irc.css"]
+extra_javascript = ["javascripts/callouts.js"]
 
 [project.validation]
 invalid_links = true
