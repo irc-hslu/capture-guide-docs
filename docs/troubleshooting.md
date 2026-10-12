@@ -6,11 +6,11 @@ The camera screen shows problems as dark banners near the top. The symbol tells 
 
 ## Tracking is lost
 
-A banner with orange arrows appears under the status pill. The phone lost track of where it is, usually after fast movement or in a scene with little to see, such as a blank wall.
+A banner appears under the status pill. The phone lost track of where it is, usually after fast movement or in a scene with little to see, such as a blank wall.
 
 - Walk back to where you were and hold the camera on something with detail. If the phone recognises the place, capture carries on in the same segment.
 - To carry on from here instead, tap "Start new segment here". Capture continues in a new segment with fresh guidance.
-- Or do nothing: the app starts a new segment by itself when the countdown ends.
+- Or do nothing: the app starts a new segment by itself when the banner's countdown ends.
 
 [Capturing a scene](capturing.md#when-tracking-is-lost) explains segments.
 
@@ -21,9 +21,9 @@ A banner with orange arrows appears under the status pill. The phone lost track 
 
 ## The result looks warped
 
-The result looks slightly warped, with walls that bend. The camera positions have probably drifted (slid away from the truth) without the app noticing.
+Walls bend because the camera positions have probably drifted (slid away from the truth) without the app noticing.
 
-- In general, a shorter capture with plenty of detail in view drifts less.
+- Keep captures short, with plenty of detail in view (this generally drifts less).
 
 ## Keyframes are not being taken
 
@@ -55,9 +55,9 @@ The frame count in the status pill stays where it is while you walk. Frames are 
 
 The dots and targets lag behind what you have just captured, and the phone feels warm. With Live splat on "This iPhone", the phone trains the 3D model while it also tracks, films and draws the guidance.
 
-- In general, letting the phone cool down in the shade, out of its case, before you go on helps.
+- Let the phone cool down in the shade, out of its case, before you go on.
 - Turn the dots off with the "Quality dots" button on the side rail. This saves drawing work.
-- For the next capture, set Live splat to "Off" in Settings. The phone then builds no 3D model, and the dots, the map, the ring and the next-view targets still work.
+- For the next capture, set Live splat to "Off" in Settings ([what that changes](#what-does-live-splat-off-do)).
 
 ??? note "Details"
     In general, an iPhone that gets hot slows itself down to cool off, so the guidance comes later.
@@ -70,16 +70,15 @@ The 3D model has a problem.
 
 ## The camera stopped
 
-A red banner starts with "Camera stopped:". The camera stopped during the capture.
+A red banner starts with "Camera stopped:".
 
 - Tap "Restart camera" in the banner.
 
 ## "Server and app versions do not match"
 
-This message shows in a red banner at the top. You chose "Mac" under Live splat, and the Mac companion speaks a different version from the app.
+It shows in a red banner. You chose "Mac" under Live splat, and the Mac companion speaks a different version from the app. Until you update, the app cannot read the guidance from the Mac. Capture and export keep working.
 
 - Update both the app and the Mac companion so they match.
-- Until you do, the app cannot read the guidance from the Mac. Capture and export keep working.
 
 ??? note "Details"
     The message appears when the first guidance update from the Mac arrives in a format the app does not know. With "This iPhone" or "Off" you never see it.
@@ -103,28 +102,31 @@ A save fails after Stop, a red banner reports an export error, or photos you exp
 
 ### Which iPhones does it work on?
 
-Capture Guide was tested on an iPhone 14 Pro and needs iOS 18 or newer on a phone that supports ARKit, Apple's augmented reality framework. We list no other models.
+Capture Guide was tested on an iPhone 14 Pro. It needs iOS 18 or newer and a phone that supports ARKit, Apple's augmented reality framework.
 
 ### Do I need a LiDAR sensor?
 
-No: the app captures without it, and on a phone without the sensor "Use LiDAR" in Settings is greyed out. LiDAR adds a depth map to each keyframe and makes the grey hatching possible.
+No, the app captures without it. LiDAR adds a depth map to each keyframe and makes the grey hatching possible.
+
+??? note "Details"
+    On a phone without the sensor, "Use LiDAR" in Settings is greyed out.
 
 ### Do I need an internet connection or Wi-Fi?
 
 No: with Live splat on "This iPhone" or "Off", the capture runs entirely on the phone. Only the "Mac" option and the place name use a network.
 
 ??? note "Details"
-    - The "Mac" option looks for the Mac companion on your local network, which is why iOS asks for that permission.
+    - The "Mac" option looks for the Mac companion on your local network, which is why iOS asks for that permission. With "Mac" chosen, the keyframes go to that Mac over your network.
     - To name a capture after its place, the app asks Apple's map service for the place name, which sends the capture's coordinates to Apple.
     - Without a connection the capture is named by date and time, and it gets the place name the next time you open it online. Without location access it keeps the date and time.
 
 ### Where is my data stored?
 
-On the phone, in the Capture Guide folder of the Files app; the app sends your photos nowhere by itself. With Live splat on "Mac" the keyframes go to that Mac over your network, and for the place name the coordinates go to Apple.
+On the phone, in the Capture Guide folder of the Files app. The app sends your photos nowhere by itself; what goes over a network is in the [answer above](#do-i-need-an-internet-connection-or-wi-fi).
 
 ### What does Live splat "Off" do?
 
-The phone builds no 3D model, which keeps it cooler, and the capture saves the same photos while the dots, the map, the ring and the next-view targets still guide you. Only the grey hatching is missing, and you can export and train as usual.
+The phone builds no 3D model and stays cooler, but it saves the same photos and still guides you with the dots, the map, the ring and the next-view targets. There is no grey hatching, and you export and train as usual.
 
 ??? note "Details"
     The capture's Splat tab says "Live splat was off".

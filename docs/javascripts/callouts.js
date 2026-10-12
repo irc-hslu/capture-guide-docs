@@ -7,7 +7,7 @@
 //   1. [**Status pill**](#status-pill): tracking state.
 //      { data-anchor="status-pill" data-side="l" }
 // Wide mode needs a label column of at least MIN_LABEL_COL px on each side of the image; the image width adapts
-// to the figure width (--shot-w).
+// to the figure width (--shot-w); narrow landscape figures use the full width up to 520 px.
 (function () {
   "use strict";
   const MIN_LABEL_COL = 140;
@@ -99,9 +99,10 @@
     const targets = items.map(li => target(li, anchors));
     const W = fig.clientWidth;
     const landscape = fig.classList.contains("callouts--landscape");
-    const shotW = landscape ? clamp(320, W - 360, 520) : clamp(200, W - 360, 300);
+    let shotW = landscape ? clamp(320, W - 360, 520) : clamp(200, W - 360, 300);
     const gap = 2.2 * 0.72 * parseFloat(getComputedStyle(document.documentElement).fontSize);
     const wide = (W - shotW) / 2 - gap >= MIN_LABEL_COL && targets.every(Boolean);
+    if (!wide && landscape) shotW = Math.min(W, 520);
     fig.style.setProperty("--shot-w", shotW + "px");
     fig.classList.toggle("callouts--wide", wide);
     fig.classList.toggle("callouts--narrow", !wide);

@@ -17,9 +17,9 @@ Tap the picture at the bottom left of the camera screen. Your captures appear as
    { data-anchor="card-collage" data-side="l" data-at="center" }
 4. [**Name**](#your-captures): place and time, or date and time.
    { data-anchor="card-name" data-side="l" }
-5. [**Date and place**](#overview): when and where you captured.
+5. [**Date and place**](#your-captures): when and where you captured.
    { data-anchor="card-date" data-side="r" }
-6. [**Frames and size**](#frames): number of keyframes and space on the phone.
+6. [**Frames and size**](#your-captures): number of keyframes and space on the phone.
    { data-anchor="card-frames" data-side="l" }
 
 </figure>
@@ -28,7 +28,7 @@ Tap the picture at the bottom left of the camera screen. Your captures appear as
 - **Delete**: tap "Select", tap the captures, then "Delete" at the bottom, and confirm. This cannot be undone.
 
 ??? note "Details"
-    - A name looks like "Main Street, Lucerne · 16:45". Without a place, the capture is named after its date and time.
+    - A name looks like "Main Street, Lucerne · 16:45".
     - While you select, a check mark appears at the bottom right of each chosen capture.
 
 ## Looking at a capture
@@ -49,7 +49,7 @@ Tap a card to open the capture. Each of its tabs has a section below.
 5. [**Map**](#overview): where you were.
    { data-anchor="overview-map" data-side="l" }
 6. [**Facts**](#overview): date, place, frames, segments and size.
-   { data-anchor="overview-facts" data-side="r" data-at="center" }
+   { data-anchor="overview-facts" data-side="r" }
 7. [**Done**](#overview): back to the camera.
    { data-anchor="done" data-side="l" }
 
@@ -74,11 +74,9 @@ The Frames tab lists every keyframe, segment by segment. Here you choose which f
 <figure class="callouts" markdown>
 ![Frames tab with two excluded frames](img/exporting-viewer-frames.png)
 
-1. [**Select**](#frames): change several frames at once.
-   { data-anchor="frames-select" data-side="r" }
-2. [**Excluded frame**](#frames): greyed out, with a crossed-out eye.
+1. [**Excluded frame**](#frames): greyed out, with a crossed-out eye.
    { data-anchor="frame-excluded" data-side="l" }
-3. [**Frame**](#frames): tap to see it large.
+2. [**Frame**](#frames): tap to see it large.
    { data-anchor="frame-cell" data-side="r" data-at="center" }
 
 </figure>
@@ -149,14 +147,14 @@ Every capture is saved on the phone while you record, with nothing to switch on.
 
 ## Getting captures off the phone
 
-Tap the share button at the top right of an open capture. It packs the capture into one zip file and opens the iOS share sheet. Unzipped, the file gives the capture folder with its segment folders, ready for [Capture to COLMAP](#turning-a-segment-into-a-colmap-model).
+Tap the share button at the top right of an open capture. It packs the capture into one zip file and opens the iOS share sheet. Send it with AirDrop to your Mac, save it to Files, or mail it. Unzipped, the file gives the capture folder with its segment folders, ready for [Capture to COLMAP](#turning-a-segment-into-a-colmap-model).
 
 <figure class="callouts" markdown>
 ![Share sheet with the capture's zip file, apps, Copy and Save to Files](img/exporting-share-sheet.png)
 
 1. [**Zip file**](#getting-captures-off-the-phone): the capture, without the working copies in `wire/`.
    { data-anchor="zip-file" data-side="l" }
-2. [**Apps**](#getting-captures-off-the-phone): send it with AirDrop to your Mac, or mail it.
+2. [**Apps**](#getting-captures-off-the-phone): send the zip to another app or device.
    { data-anchor="share-apps" data-side="l" }
 3. [**Save to Files**](#getting-captures-off-the-phone): keeps the zip in the Files app.
    { data-anchor="save-to-files" data-side="r" }
@@ -228,7 +226,7 @@ Photos that the app cannot match well enough are left out of the model. If many 
     - Exporting the same segment again replaces the earlier export.
     - **Camera positions**: "Refine with the phone's positions (recommended)" matches the photos to each other, starting from where the phone thought the camera was, and keeps the result at real-world scale. "Use the phone's positions as they are" skips that fit.
     - **Photo matching**: "Neighbouring photos (recommended)" compares each photo with the ones taken around it. "Every photo with every other (slow; short captures only)" compares all of them.
-    - **Match checking**: "Standard (recommended)". "Relaxed" places more photos and checks them more thoroughly against the phone's positions, which takes longer.
+    - **Match checking**: stays on "Standard (recommended)"; "Relaxed" places more photos and checks them more thoroughly against the phone's positions, which takes longer.
     - **Starting points**: writes `seed.ply`, a cloud built from the phone's depth sensor and the phone's own points, together with COLMAP's points, coloured from your photos. Spirula Studio can start training from it.
     - **Depth images**: "Phone LiDAR" writes the depth sensor's readings next to the photos, which some trainers can use as a guide for the geometry.
 
