@@ -7,7 +7,7 @@ How to find your captures on the iPhone, get them onto your computer and train o
 Tap the picture at the bottom left of the camera screen. Your captures appear as cards, newest first.
 
 <figure class="callouts" markdown>
-![Your captures: cards with photos, name, date, place, frames and size](img/exporting-library.png)
+![Your captures: cards with photos, name, date, place, frames and size](img/exporting-library.jpg)
 
 1. [**Close**](#your-captures): back to the camera.
    { data-anchor="library-close" data-side="l" }
@@ -36,7 +36,7 @@ Tap the picture at the bottom left of the camera screen. Your captures appear as
 Tap a card to open the capture. Each of its tabs has a section below.
 
 <figure class="callouts" markdown>
-![Overview of a capture: top view, map, facts and Done](img/exporting-viewer-overview.png)
+![Overview of a capture: top view, map, facts and Done](img/exporting-viewer-overview.jpg)
 
 1. [**Back**](#looking-at-a-capture): to your captures.
    { data-anchor="back" data-side="l" }
@@ -72,7 +72,7 @@ Grey points are the surfaces. A coloured line from a dot to an arrowhead is the 
 The Frames tab lists every keyframe, segment by segment. Here you choose which frames the export leaves out.
 
 <figure class="callouts" markdown>
-![Frames tab with two excluded frames](img/exporting-viewer-frames.png)
+![Frames tab with two excluded frames](img/exporting-viewer-frames.jpg)
 
 1. [**Excluded frame**](#frames): greyed out, with a crossed-out eye.
    { data-anchor="frame-excluded" data-side="l" }
@@ -93,7 +93,7 @@ The Frames tab lists every keyframe, segment by segment. Here you choose which f
 If the phone built no model, the tab says why: "Live splat was off", "Built on the Mac" or "No splat yet".
 
 <figure class="callouts" markdown>
-![Splat tab: the 3D model in an orbit view](img/exporting-viewer-splat.png)
+![Splat tab: the 3D model in an orbit view](img/exporting-viewer-splat.jpg)
 
 1. [**Splat tab**](#splat): the 3D model the phone built, if there is one.
    { data-anchor="tab-picker" data-side="r" }
@@ -110,7 +110,7 @@ If the phone built no model, the tab says why: "Live splat was off", "Built on t
 Every capture is saved on the phone while you record, with nothing to switch on. In the Files app, go to On My iPhone, then "Capture Guide". Tap Stop before you leave the app, so the list of photos is complete.
 
 <figure class="callouts" markdown>
-![The Files app with a capture folder open: capture.json, overlay-metrics.jsonl, segment-0 and thumb-v2](img/exporting-files-app.png)
+![The Files app with a capture folder open: capture.json, overlay-metrics.jsonl, segment-0 and thumb-v2](img/exporting-files-app.jpg)
 
 1. [**Capture folder**](#where-your-captures-are-stored): named after the start time in UTC.
    { data-anchor="capture-folder" data-side="r" }
@@ -150,7 +150,7 @@ Every capture is saved on the phone while you record, with nothing to switch on.
 Tap the share button at the top right of an open capture. It packs the capture into one zip file and opens the iOS share sheet. Send it with AirDrop to your Mac, save it to Files, or mail it. Unzipped, the file gives the capture folder with its segment folders, ready for [Capture to COLMAP](#turning-a-segment-into-a-colmap-model).
 
 <figure class="callouts" markdown>
-![Share sheet with the capture's zip file, apps, Copy and Save to Files](img/exporting-share-sheet.png)
+![Share sheet with the capture's zip file, apps, Copy and Save to Files](img/exporting-share-sheet.jpg)
 
 1. [**Zip file**](#getting-captures-off-the-phone): the capture, without the working copies in `wire/`.
    { data-anchor="zip-file" data-side="l" }
@@ -194,7 +194,7 @@ Capture to COLMAP runs on a Mac with Apple Silicon and macOS 14 or newer.
 ### Converting
 
 <figure class="callouts callouts--landscape" markdown>
-![The Capture to COLMAP window with a segment folder chosen and every option on its recommended entry](img/exporting-capture-to-colmap.png)
+![The Capture to COLMAP window with a segment folder chosen and every option on its recommended entry](img/exporting-capture-to-colmap.jpg)
 
 1. [**Segment folder**](#converting): the segment to convert.
    { data-anchor="segment-folder" data-side="l" }

@@ -7,7 +7,7 @@ The phone keeps its own map of the surfaces it has seen and how well your photos
 ## Overlays in the room
 
 <figure class="callouts" markdown>
-![Camera view with the guidance line, the yellow camera, its floor ring, the outlined area, quality dots and grey hatching](img/guidance-overlays.png)
+![Camera view with the guidance line, the yellow camera, its floor ring, the outlined area, quality dots and grey hatching](img/guidance-overlays.jpg)
 
 1. [**Guidance line**](#the-guidance-line): what to do next.
    { data-anchor="guidance-line" data-side="r" }
@@ -29,7 +29,7 @@ The phone keeps its own map of the surfaces it has seen and how well your photos
 ## Controls
 
 <figure class="callouts" markdown>
-![Camera view while recording with the side rail, the Stop button and the minimap](img/guidance-controls.png)
+![Camera view while recording with the side rail, the Stop button and the minimap](img/guidance-controls.jpg)
 
 1. [**Splat view**](#splat-view): the 3D model instead of the camera image.
    { data-anchor="rail-splat" data-side="r" }
@@ -55,7 +55,7 @@ The phone keeps its own map of the surfaces it has seen and how well your photos
 The app picks one weak area at a time. Go to the yellow camera and face the outlined area; close to the camera, a ring appears at the area itself. Once you are in position, a keyframe is taken (or you tap the shutter) and the next target follows.
 
 <figure class="callouts" markdown>
-![Camera view with a white arrowhead at the left edge pointing to a yellow camera off screen](img/guidance-arrow.png)
+![Camera view with a white arrowhead at the left edge pointing to a yellow camera off screen](img/guidance-arrow.jpg)
 
 1. [**Edge arrow**](#next-view-target): a white arrowhead pointing to the off-screen yellow camera.
    { data-anchor="edge-arrow" data-side="l" }
@@ -120,7 +120,7 @@ The grey diagonal stripes lie over a faint grey fill, on surfaces the LiDAR sens
 The colour of each pyramid tells you how well that keyframe is tied to the others, from "needs work" to "good". Where pyramids sit at the "needs work" end, add views in between and around them, so each keyframe shares more of its view with its neighbours.
 
 <figure class="callouts" markdown>
-![Pyramid outlines of earlier keyframes spread around a room in front of a window](img/guidance-frustums.png)
+![Pyramid outlines of earlier keyframes spread around a room in front of a window](img/guidance-frustums.jpg)
 
 1. [**Keyframe frustum**](#keyframe-frustums): a keyframe's place, pointing the way the camera looked.
    { data-anchor="frustum" data-side="l" }
@@ -146,7 +146,7 @@ The buttons on the right edge are named in the [Controls](#controls) figure. A w
 In the splat view the other layers are hidden. Where the model has nothing yet, the screen stays black; gaps and thin areas are places it has not learned. Switch it on for a quick look, then off again to carry on with the guidance.
 
 <figure class="callouts" markdown>
-![Splat view of a partly built room, with the Splat view button on](img/guidance-splat-view.png)
+![Splat view of a partly built room, with the Splat view button on](img/guidance-splat-view.jpg)
 
 1. [**3D model**](#splat-view): what the phone has built so far.
    { data-anchor="splat-view" data-side="l" data-at="center" }

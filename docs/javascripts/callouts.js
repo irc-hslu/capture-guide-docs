@@ -61,6 +61,7 @@
     const items = Array.from(fig.querySelectorAll("ol > li"));
     if (!img || !items.length) return;
     fig.classList.add("callouts--ready");
+    items[0].parentNode.setAttribute("role", "list");   // wide mode's list-style:none drops it in Safari
     items.forEach((li, i) => { li.dataset.n = String(i + 1); });
     const shot = document.createElement("div");
     shot.className = "callouts__shot";
@@ -80,11 +81,20 @@
       return m;
     });
     linkHighlight(fig);
-    let anchors = null;
-    const layout = () => draw(fig, img, shot, svg, items, markers, anchors);
-    loadAnchors(fig, img).then(a => { anchors = a; layout(); });
+    // While the anchor file loads, the labels keep their space but stay hidden, so the page does not show the
+    // narrow list first and then jump to the wide layout.
+    let anchors = null, loading = !!fig.querySelector("li[data-anchor]");
+    fig.classList.toggle("callouts--loading", loading);
+    const layout = () => {
+      draw(fig, img, shot, svg, items, markers, anchors);
+      if (!loading && (img.complete || fig.matches(".callouts--wide, .callouts--narrow"))) {
+        fig.classList.remove("callouts--loading");
+      }
+    };
+    loadAnchors(fig, img).then(a => { anchors = a; loading = false; layout(); });
     new ResizeObserver(layout).observe(fig);
     img.addEventListener("load", layout);
+    img.addEventListener("error", layout);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
   }
 
@@ -150,11 +160,23 @@
     });
   }
 
+  // A label and its marker light up together on hover or keyboard focus (the label's link); a click or tap keeps
+  // one lit until it is clicked again or another is.
   function linkHighlight(fig) {
+    let pinned = null;
     const set = (n, on) => fig.querySelectorAll(`[data-n="${n}"]`).forEach(e => e.classList.toggle("is-on", on));
     fig.querySelectorAll("[data-n]").forEach(e => {
-      e.addEventListener("mouseenter", () => set(e.dataset.n, true));
-      e.addEventListener("mouseleave", () => set(e.dataset.n, false));
+      const n = e.dataset.n;
+      const off = () => set(n, n === pinned);
+      e.addEventListener("mouseenter", () => set(n, true));
+      e.addEventListener("mouseleave", off);
+      e.addEventListener("focusin", () => set(n, true));
+      e.addEventListener("focusout", off);
+      e.addEventListener("click", () => {
+        if (pinned) set(pinned, false);
+        pinned = pinned === n ? null : n;
+        if (pinned) set(pinned, true);
+      });
     });
   }
 

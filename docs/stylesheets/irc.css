@@ -34,3 +34,4 @@ figure.callouts--wide ol > li:not([data-side="l"]) { right: 0; }
 figure.callouts--wide .callouts__lines { display: block; }
 figure.callouts .is-on { outline: 2px solid var(--md-accent-fg-color); outline-offset: 2px; border-radius: 4px; }
 .callouts__marker[hidden] { display: none !important; }
+figure.callouts--loading ol { visibility: hidden; }

@@ -23,7 +23,7 @@ iOS asks for three permissions on first use:
 Capture Guide opens on the camera, and nothing is saved until you tap Record. Like the Camera app, the controls stay dark even in Light Mode.
 
 <figure class="callouts" markdown>
-![Camera screen before recording: side rail, Live splat chip, Record button, captures and gear](img/getting-started-camera.png)
+![Camera screen before recording: side rail, Live splat chip, Record button, captures and gear](img/getting-started-camera.jpg)
 
 1. [**Side rail**](guidance.md#the-side-rail): one button per guidance layer. White disc means on.
    { data-anchor="rail" data-side="r" }
@@ -53,7 +53,7 @@ The phone builds the 3D model itself, so you need no other device.
 5. When the button at the bottom changes from "Saving splat…" to "Done", tap it. [Your captures and exporting](exporting.md) shows what you can do with the capture.
 
 <figure class="callouts" markdown>
-![Camera screen while recording: status pill, guidance line, side rail, map button, Stop and gear](img/getting-started-recording.png)
+![Camera screen while recording: status pill, guidance line, side rail, map button, Stop and gear](img/getting-started-recording.jpg)
 
 1. [**Status pill**](capturing.md#keyframes): tracking state and the number of keyframes.
    { data-anchor="status-pill" data-side="l" }
@@ -83,7 +83,7 @@ The phone builds the 3D model itself, so you need no other device.
 Open Settings with the gear or the Live splat chip. Rows that change how the camera runs read "Stop to change." during a capture. Some rows explain themselves in a grey second line.
 
 <figure class="callouts" markdown>
-![Settings with Live splat, Capture, Photos and Guidance](img/getting-started-settings.png)
+![Settings with Live splat, Capture, Photos and Guidance](img/getting-started-settings.jpg)
 
 1. [**Live splat**](#live-splat): where the 3D model is built.
    { data-anchor="live-splat" data-side="r" }

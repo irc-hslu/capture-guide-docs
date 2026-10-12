@@ -7,7 +7,7 @@ Capture Guide is built for scenes: rooms and other spaces, indoors or outdoors. 
 A 3D reconstruction needs every part of the scene in several photos taken from different places. The app keeps a photo, a keyframe, when your view has changed enough since the last one.
 
 <figure class="callouts" markdown>
-![Keyframe flash: a white border around the screen while recording](img/capturing-keyframe-pulse.png)
+![Keyframe flash: a white border around the screen while recording](img/capturing-keyframe-pulse.jpg)
 
 1. [**Status pill**](#walking-pace-and-distance): counts keyframes. Stops rising when frames blur.
    { data-anchor="status-pill" data-side="r" }
@@ -66,7 +66,7 @@ Turn on manual capture with the hand button on the side rail: the automatic keyf
 The app only captures while the phone's tracking (Apple's ARKit) works normally. If tracking drops, for example from fast motion or a scene with too little detail, capture pauses and the phone tries to find its place again.
 
 <figure class="callouts" markdown>
-![Relocalising banner with the countdown and the Start new segment here button](img/capturing-relocalising.png)
+![Relocalising banner with the countdown and the Start new segment here button](img/capturing-relocalising.jpg)
 
 1. [**Status pill**](#when-tracking-is-lost): the tracking state.
    { data-anchor="status-pill" data-side="l" }
