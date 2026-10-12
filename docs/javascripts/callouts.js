@@ -99,7 +99,7 @@
     const targets = items.map(li => target(li, anchors));
     const W = fig.clientWidth;
     const landscape = fig.classList.contains("callouts--landscape");
-    const shotW = landscape ? clamp(320, W - 300, 520) : clamp(200, W - 360, 300);
+    const shotW = landscape ? clamp(320, W - 360, 520) : clamp(200, W - 360, 300);
     const gap = 2.2 * 0.72 * parseFloat(getComputedStyle(document.documentElement).fontSize);
     const wide = (W - shotW) / 2 - gap >= MIN_LABEL_COL && targets.every(Boolean);
     fig.style.setProperty("--shot-w", shotW + "px");
