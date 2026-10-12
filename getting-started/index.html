@@ -748,7 +748,7 @@
 <li data-anchor="live-splat" data-side="r"><a href="#live-splat"><strong>Live splat</strong></a>: where the 3D model is built.</li>
 <li data-anchor="use-lidar" data-side="r"><a href="#requirements"><strong>Use LiDAR</strong></a>: on by default; greyed out without the sensor.</li>
 <li data-anchor="scene" data-side="r"><a href="#other-settings"><strong>Scene</strong></a>: "Indoor" or "Outdoor".</li>
-<li data-anchor="photo-overlap" data-side="r"><a href="#other-settings"><strong>Photo overlap</strong></a>: how much a new keyframe may share with the last.</li>
+<li data-anchor="photo-overlap" data-side="r"><a href="#other-settings"><strong>Matcher</strong></a>: what will reconstruct your photos; sets how much a new keyframe shares with the last.</li>
 <li data-anchor="guidance-sounds" data-side="r"><a href="../guidance/#guidance-sounds-and-taps"><strong>Guidance sounds</strong></a>: a click and a tone for the targets.</li>
 <li data-anchor="proximity-ticks" data-side="r"><a href="../guidance/#guidance-sounds-and-taps"><strong>Proximity ticks</strong></a>: taps that speed up near the yellow camera.</li>
 </ol>
@@ -769,7 +769,13 @@
 <h3 id="other-settings">Other settings</h3>
 <ul>
 <li><strong>Scene</strong>: "Outdoor" is for scenes that reach far away.</li>
-<li><strong>Photo overlap</strong>: "Splatting 60 %" is the default; "SfM-safe 72 %" takes more photos, which suits photogrammetry software.</li>
+<li><strong>Matcher</strong> (under Photos): pick the software that will reconstruct your photos. More overlap means more photos.<ul>
+<li>"SIFT (60 %)" is the default and suits Capture to COLMAP, which uses SIFT.</li>
+<li>"SIFT — more overlap (72 %)" takes more photos, for hard scenes or other photogrammetry software.</li>
+<li>"ALIKED (35 %)" takes the fewest photos, for software that matches with ALIKED and LightGlue.</li>
+<li>"Custom" shows a slider from 25 to 85 %.</li>
+</ul>
+</li>
 <li><strong>Coverage colours</strong> (under Guidance): the colours of the quality dots and the map, "Blue-Orange" by default or "Cividis", which runs from dark blue to yellow.</li>
 </ul>
 <details class="note">
