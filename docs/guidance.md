@@ -17,7 +17,7 @@ The phone keeps its own map of the surfaces it has seen and how well your photos
    { data-anchor="target-box" data-side="r" }
 4. [**Weak dot**](#quality-dots): a spot that still needs work.
    { data-anchor="dot-weak" data-side="l" }
-5. [**Floor ring**](#next-view-target): on the floor under the yellow camera.
+5. [**Floor ring**](#next-view-target): under the yellow camera, where you stand.
    { data-anchor="target-ring" data-side="l" }
 6. [**Good dot**](#quality-dots): a spot your photos already cover well.
    { data-anchor="dot-good" data-side="l" }
@@ -52,7 +52,7 @@ The phone keeps its own map of the surfaces it has seen and how well your photos
 
 ## Next-view target
 
-The app picks one weak area at a time. Go to the yellow camera and face the outlined area; close to the camera, a ring appears at the area itself. Once you are in position, a keyframe is taken and the next target follows.
+The app picks one weak area at a time. Go to the yellow camera and face the outlined area; close to the camera, a ring appears at the area itself. Once you are in position, a keyframe is taken (or you tap the shutter) and the next target follows.
 
 <figure class="callouts" markdown>
 ![Camera view with a white arrowhead at the left edge pointing to a yellow camera off screen](img/guidance-arrow.png)
@@ -89,16 +89,16 @@ When "Room covered" shows, you can stop, or carry on if you want a denser captur
 
 ## Guidance sounds and taps
 
-A click tells you that you reached the yellow camera, and a tone that its area is covered; you feel a tap each time as well. "Proximity ticks" are soft taps that come faster as you get nearer to the yellow camera, like a parking sensor. Both can be turned off in Settings, under Guidance.
+A click tells you that you reached the yellow camera, and a tone that its area is covered; you feel a tap each time as well. "Proximity ticks" are soft taps that come faster as you get nearer to the yellow camera, like a parking sensor. The "Guidance sounds" and "Proximity ticks" switches in Settings, under Guidance, turn them off.
 
 ??? note "Details"
-    - The "Guidance sounds" switch turns off the click and the tone. The taps on arrival and completion do not depend on it.
+    - "Guidance sounds" covers the click and the tone. The taps on arrival and completion do not depend on it.
     - The phone's silent switch mutes the sounds as well, and music or podcasts keep playing underneath.
-    - Proximity ticks stop once you are in position. They have their own switch, "Proximity ticks".
+    - Proximity ticks stop once you are in position.
 
 ## Quality dots
 
-The dots lie on the surfaces the phone knows and show how well your photos cover each spot. With the default colours, "Blue-Orange", light blue is well covered, the colour darkens as coverage gets worse, and orange needs work. Walk towards the weak dots and look at them from a new side; moving sideways helps more than turning on the spot, as [Capturing a scene](capturing.md#angles) explains.
+The dots lie on the surfaces the phone knows. With the default colours, "Blue-Orange", light blue is well covered, the colour darkens as coverage gets worse, and orange needs work. Walk towards the weak dots and look at them from a new side; moving sideways helps more than turning on the spot, as [Capturing a scene](capturing.md#angles) explains.
 
 ??? note "Details"
     - A spot gets full marks when the phone has seen it in about 8 photos, taken from a spread of directions, with at least one close enough to show it sharply. Fewer photos, or photos from one side only, leave the dot towards orange.
@@ -108,12 +108,12 @@ The dots lie on the surfaces the phone knows and show how well your photos cover
 
 ## Grey hatching
 
-Grey diagonal stripes over a faint grey fill mark surfaces the LiDAR sensor has found but the reconstruction does not cover yet. Point the camera at them; the stripes disappear as the reconstruction catches up.
+The grey diagonal stripes lie over a faint grey fill, on surfaces the LiDAR sensor has found. Point the camera at them; they disappear as the reconstruction catches up.
 
 ??? note "Details"
-    - "Does not cover" means the reconstruction has nothing within about 10 cm of the surface.
+    - Hatched means the reconstruction has nothing within about 10 cm of the surface.
     - Hatching needs LiDAR and a Live splat setting other than "Off".
-    - It stays off until the first reconstruction exists, so you do not see it in the first moments of a capture.
+    - It stays off until the first reconstruction exists.
 
 ## Keyframe frustums
 
@@ -135,7 +135,7 @@ The colour of each pyramid tells you how well that keyframe is tied to the other
 
 ## The side rail
 
-The buttons on the right edge switch the guidance layers on and off, as the [Controls](#controls) figure shows. A white disc behind a button means on; a plain white symbol means off.
+The buttons on the right edge are named in the [Controls](#controls) figure. A white disc behind a button means on; a plain white symbol means off.
 
 ??? note "Details"
     - The Splat view button appears once the phone has built part of the 3D model, with Live splat on "This iPhone".
@@ -143,7 +143,7 @@ The buttons on the right edge switch the guidance layers on and off, as the [Con
 
 ## Splat view
 
-In the splat view, gaps and thin areas are places the model has not learned yet. The other layers are hidden, and the model sits on black. Switch it on for a quick look, then off again to carry on with the guidance.
+In the splat view the other layers are hidden. Where the model has nothing yet, the screen stays black; gaps and thin areas are places it has not learned. Switch it on for a quick look, then off again to carry on with the guidance.
 
 <figure class="callouts" markdown>
 ![Splat view of a partly built room, with the Splat view button on](img/guidance-splat-view.png)
@@ -154,14 +154,14 @@ In the splat view, gaps and thin areas are places the model has not learned yet.
    { data-anchor="rail-splat" data-side="r" }
 3. [**Manual capture**](capturing.md#keyframes-by-hand): the only other button left.
    { data-anchor="rail-manual" data-side="r" }
-4. [**Minimap**](#minimap): stays.
+4. [**Minimap**](#minimap): stays in the splat view.
    { data-anchor="minimap" data-side="l" }
 
 </figure>
 
 ## Progress ring
 
-The filled part of the white ring around Stop is the share of the known surface that is nearly fully covered, so it grows as you fill gaps. Use it to judge how far along you are. "Room covered" in the guidance line is the better sign that you are done.
+The filled part of the white ring around Stop is the share of the known surface that is nearly fully covered, so it grows as you fill gaps. Use it to judge how far along you are.
 
 ??? note "Details"
     - The ring appears a little after you start, once the phone has its first coverage figure.
@@ -171,7 +171,7 @@ The filled part of the white ring around Stop is the share of the known surface 
 
 ## Minimap
 
-The round map looks down on the area around you: your view direction points up, and the white triangle in the middle is you. Its squares are coloured like the dots, so it shows weak spots even behind you, and a yellow dot marks the next-view target. Use it to decide where to walk next, then the target and the dots for the details. Tap the map to hide it; a round map button takes its place and brings it back.
+The round map looks down on the area around you: your view direction points up, and the white triangle in the middle is you. Its squares are coloured like the dots, so it shows weak spots even behind you, and a yellow dot marks the next-view target. Use it to pick where to walk; the target and dots show the details. Tap the map to hide it; a round map button takes its place and brings it back.
 
 ??? note "Details"
     - The map covers 5 m around you. Each small square is a patch of known surface, with the legend "good" and "needs work" under the map.

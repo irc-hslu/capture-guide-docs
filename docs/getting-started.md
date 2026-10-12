@@ -57,7 +57,7 @@ The phone builds the 3D model itself, so you need no other device.
 
 1. [**Status pill**](capturing.md#keyframes): tracking state and the number of keyframes.
    { data-anchor="status-pill" data-side="l" }
-2. [**Guidance line**](guidance.md#next-view-target): what to do next.
+2. [**Guidance line**](guidance.md#the-guidance-line): what to do next.
    { data-anchor="guidance-line" data-side="r" }
 3. [**Side rail**](guidance.md#the-side-rail): guidance layers on and off.
    { data-anchor="rail" data-side="r" }
