@@ -23,16 +23,16 @@ A 3D reconstruction needs every part of the scene in several photos taken from d
 
 ??? note "Details"
     - A turn on the spot adds a frame now and then, which keeps the keyframes linked.
-    - By default a keyframe is taken when the view shares about 60 % or less with the last one ([Photo overlap](getting-started.md#other-settings) in Settings, behind the gear at the bottom right of the camera screen), or after a turn of about 10 degrees.
+    - By default a keyframe is taken when the view shares about 60 % or less with the last one ([Matcher](getting-started.md#other-settings) in Settings, behind the gear at the bottom right of the camera screen), or after a turn of about 10 degrees.
     - "The same way" means within about 10 degrees. "Close" scales with how far away the surfaces are, from 5 cm up to 30 cm.
 
 ## Walking pace and distance
 
-Walk slowly and keep the phone steady. Turning fast smears the image, worse in a dim room, and smeared frames are skipped: the count in the pill stops rising until you slow down. If you move too fast for a sharp photo while the app wants one, a yellow tortoise pill "Slow down" replaces the guidance line, with a soft tap. It goes away once a sharp photo is taken. The app does not enforce a distance to the surfaces; the guidance and the keyframe flashes show whether the phone is picking up your view.
+Walk slowly and keep the phone steady. Turning fast smears the image, worse in a dim room, and smeared frames are skipped: the count in the pill stops rising until you slow down. If you move too fast for a sharp photo while the app wants one, a yellow tortoise pill "Slow down" replaces the guidance line, with a soft tap. It goes away once a sharp photo is taken. After a fast turn the app may take a slightly softer photo, so the photos stay connected. The app does not enforce a distance to the surfaces; the guidance and the keyframe flashes show whether the phone is picking up your view.
 
 ??? note "Details"
     - A dim room makes the smear worse because the camera exposes longer.
-    - The app measures how much each frame smears. A frame that smears by more than about 2 pixels is skipped.
+    - The app measures how much each frame smears from the phone's motion sensor. A frame that smears by more than about 3 pixels is skipped. Once the phone has turned about 25 degrees since the last keyframe, up to about 6 pixels is accepted.
 
 ## Angles
 

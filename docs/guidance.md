@@ -130,7 +130,7 @@ The colour of each pyramid tells you how well that keyframe is tied to the other
 </figure>
 
 ??? note "Details"
-    - The colour is the share of a keyframe's view that another keyframe also sees: "needs work" at 0 %, "good" at 72 %.
+    - The colour is the share of a keyframe's view that another keyframe also sees: "needs work" at 0 %, "good" at the overlap your [Matcher](getting-started.md#other-settings) sets (60 % by default).
     - A white pyramid means the app cannot judge that keyframe yet.
     - A new segment clears them, because the old coordinate system is gone.
     - They are on by default.

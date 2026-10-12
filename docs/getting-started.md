@@ -91,7 +91,7 @@ Open Settings with the gear or the Live splat chip. Rows that change how the cam
    { data-anchor="use-lidar" data-side="r" }
 3. [**Scene**](#other-settings): "Indoor" or "Outdoor".
    { data-anchor="scene" data-side="r" }
-4. [**Photo overlap**](#other-settings): how much a new keyframe may share with the last.
+4. [**Matcher**](#other-settings): what will reconstruct your photos; sets how much a new keyframe shares with the last.
    { data-anchor="photo-overlap" data-side="r" }
 5. [**Guidance sounds**](guidance.md#guidance-sounds-and-taps): a click and a tone for the targets.
    { data-anchor="guidance-sounds" data-side="r" }
@@ -113,7 +113,11 @@ Open Settings with the gear or the Live splat chip. Rows that change how the cam
 ### Other settings
 
 - **Scene**: "Outdoor" is for scenes that reach far away.
-- **Photo overlap**: "Splatting 60 %" is the default; "SfM-safe 72 %" takes more photos, which suits photogrammetry software.
+- **Matcher** (under Photos): pick the software that will reconstruct your photos. More overlap means more photos.
+    - "SIFT (60 %)" is the default and suits Capture to COLMAP, which uses SIFT.
+    - "SIFT — more overlap (72 %)" takes more photos, for hard scenes or other photogrammetry software.
+    - "ALIKED (35 %)" takes the fewest photos, for software that matches with ALIKED and LightGlue.
+    - "Custom" shows a slider from 25 to 85 %.
 - **Coverage colours** (under Guidance): the colours of the quality dots and the map, "Blue-Orange" by default or "Cividis", which runs from dark blue to yellow.
 
 ??? note "Details"
