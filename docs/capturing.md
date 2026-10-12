@@ -43,7 +43,8 @@ Walk slowly and keep the phone steady. Turning fast smears the image, worse in a
 The guidance shows a yellow camera where to stand and the outlined area to point at, as described in [Reading the guidance](guidance.md).
 
 ??? note "Details"
-    A step changes the view of nearby surfaces far more than a turn does, and that change in angle is one of the triggers for a new keyframe.
+    - A step changes the view of nearby surfaces far more than a turn does, and that change in angle is one of the triggers for a new keyframe.
+    - The quality dots and the ring count a turn on the spot as no new direction ([Quality dots](guidance.md#quality-dots)).
 
 ## Light
 

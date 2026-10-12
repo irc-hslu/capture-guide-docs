@@ -98,10 +98,12 @@ A click tells you that you reached the yellow camera, and a tone that its area i
 
 ## Quality dots
 
-The dots lie on the surfaces the phone knows. With the default colours, "Blue-Orange", light blue is well covered, the colour darkens as coverage gets worse, and orange needs work. Walk towards the weak dots and look at them from a new side; moving sideways helps more than turning on the spot, as [Capturing a scene](capturing.md#angles) explains.
+The dots lie on the surfaces the phone knows. With the default colours, "Blue-Orange", light blue is well covered, the colour darkens as coverage gets worse, and orange needs work. Walk towards the weak dots and look at them from a new side; moving sideways helps more than turning on the spot, as [Capturing a scene](capturing.md#angles) explains. Walk around a surface rather than along it to fill corners and edges.
 
 ??? note "Details"
-    - A spot gets full marks when the phone has seen it in about 8 photos, taken from a spread of directions, with at least one close enough to show it sharply. Fewer photos, or photos from one side only, leave the dot towards orange.
+    - A spot gets full marks once the phone has seen it from 3 clearly different directions and from close enough at least once. Fewer directions, or only distant photos, leave the dot towards orange.
+    - Different directions: at least 25° apart. Standing 2 m from a wall, about 1 m sideways gives a new direction. Turning on the spot gives none.
+    - Close enough: within about 2 m with the main camera, about 1 m with the ultra-wide.
     - The colours change as the phone takes new keyframes.
     - "Coverage colours" in Settings switches the colour scheme. The map legend always shows the one you picked, from "good" to "needs work".
     - The guidance keeps working with the dots turned off.
@@ -161,11 +163,12 @@ In the splat view the other layers are hidden. Where the model has nothing yet, 
 
 ## Progress ring
 
-The filled part of the white ring around Stop is the share of the known surface that is nearly fully covered, so it grows as you fill gaps. Use it to judge how far along you are.
+The filled part of the white ring around Stop is the share of the known surface seen from at least 3 clearly different directions, with at least one photo from close enough. It grows as you fill gaps; the [quality dots](#quality-dots) show which spots still need work. Use it to judge how far along you are. Walk around surfaces and look at them from new sides to fill it.
 
 ??? note "Details"
     - The ring appears a little after you start, once the phone has its first coverage figure.
-    - The surface is split into small patches, and a patch counts once its coverage is above 80 % ([Quality dots](#quality-dots) explains coverage).
+    - "Different directions" and "close enough" mean the same as for the [quality dots](#quality-dots).
+    - After a quick walk through the room in one pass, the ring often stays well below half.
     - It rarely reaches the full circle: corners you cannot reach and surfaces seen from one side keep it below that.
     - When a new segment starts, the ring disappears until the new segment has its own figure.
 
