@@ -364,6 +364,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-splat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Live splat
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Other settings
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -597,6 +625,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-splat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Live splat
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Other settings
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -620,74 +676,106 @@
 <p>What you need, how the camera screen is laid out, and your first capture.</p>
 <h2 id="requirements">Requirements</h2>
 <ul>
-<li>An iPhone with iOS 18 or newer. Capture Guide was tested on an iPhone 14 Pro.</li>
-<li>A LiDAR sensor is optional. With LiDAR, the app saves a depth map (a distance for each pixel) with each photo it keeps and draws grey hatching over surfaces the reconstruction does not cover yet. Without LiDAR the capture still works, without those two. On a phone without the sensor, "Use LiDAR" in Settings is greyed out.</li>
+<li>An iPhone with iOS 18 or newer (tested on an iPhone 14 Pro).</li>
+<li>Optional: a LiDAR sensor, which adds a depth map (a distance for each pixel) to each photo the app keeps and grey hatching over surfaces the reconstruction does not cover yet. The capture works without it.</li>
 </ul>
 <h2 id="install">Install</h2>
 <div class="admonition note">
 <p class="admonition-title">Coming soon</p>
 <p>Capture Guide will be available through TestFlight or the App Store. The links will appear here.</p>
 </div>
-<p>Capture Guide opens straight into the camera, so iOS asks for camera access the first time the camera starts. iOS also asks whether the app may use the local network. The app uses it only to look for a Mac running the planned companion app; building the 3D model on this iPhone does not need it.</p>
-<p>The first time you tap Record, iOS asks for your location. The app saves where a capture was made, so it can name the capture after the place and show it on a map. Recording starts right away, whatever you answer.</p>
-<h2 id="the-camera-screen">The camera screen</h2>
-<figure>
-<p><img alt="Camera screen before recording: chip, Record button, side rail, captures and gear" loading="lazy" src="../img/getting-started-camera.png" /></p>
-<figcaption>
-<p>Screenshot pending: the camera screen before recording, with the side rail on the right, the "Splat: iPhone" chip above the Record button, the newest capture at the bottom left and the gear at the bottom right.</p>
-</figcaption>
-</figure>
+<p>iOS asks for three permissions on first use:</p>
 <ul>
-<li><strong>Record</strong>, at the bottom in the middle, starts a capture. Nothing is saved before you tap it.</li>
-<li><strong>The Live splat chip</strong> above Record shows where the 3D model is built while you capture, for example "Splat: iPhone". The model is made of many splats, tiny blobs of colour. Tap the chip to change where it is built.</li>
-<li><strong>Your captures</strong>: the picture at the bottom left shows your newest capture. Tap it to see all of them. It appears after your first capture.</li>
-<li><strong>Settings</strong>: the gear at the bottom right.</li>
-<li><strong>The side rail</strong> on the right edge has one button per guidance layer. A white disc behind a button means that layer is on. <a href="../guidance/#the-side-rail">Reading the guidance</a> lists the buttons.</li>
+<li><strong>Camera</strong>: as soon as the app opens, since it starts on the camera.</li>
+<li><strong>Local network</strong>: only used to look for a Mac running the planned companion app.</li>
+<li><strong>Location</strong>: the first time you tap Record, to name a capture after the place and show it on a map; recording starts right away, whatever you answer.</li>
 </ul>
-<p>The controls on the camera screen stay dark, also when your iPhone is set to Light Mode, as in the Camera app.</p>
+<h2 id="the-camera-screen">The camera screen</h2>
+<p>Capture Guide opens on the camera, and nothing is saved until you tap Record. Like the Camera app, the controls stay dark even in Light Mode.</p>
+<figure class="callouts">
+<p><img alt="Camera screen before recording: side rail, Live splat chip, Record button, captures and gear" src="../img/getting-started-camera.jpg" /></p>
+<ol>
+<li data-anchor="rail" data-side="r"><a href="../guidance/#the-side-rail"><strong>Side rail</strong></a>: one button per guidance layer. White disc means on.</li>
+<li data-anchor="chip" data-side="r"><a href="#live-splat"><strong>Live splat chip</strong></a>: where the 3D model is built. Tap to change.</li>
+<li data-anchor="captures-tile" data-side="l"><a href="../exporting/#your-captures"><strong>Your captures</strong></a>: your newest capture. Tap it to see all.</li>
+<li data-anchor="record" data-side="l"><a href="#your-first-capture"><strong>Record</strong></a>: starts a capture.</li>
+<li data-anchor="gear" data-side="r"><a href="#settings"><strong>Settings</strong></a>: the gear.</li>
+</ol>
+</figure>
+<details class="note">
+<summary>Details</summary>
+<ul>
+<li>The chip reads, for example, "Splat: iPhone". The 3D model is made of many splats, tiny blobs of colour.</li>
+<li>The picture of your newest capture appears after your first capture.</li>
+</ul>
+</details>
 <h2 id="your-first-capture">Your first capture</h2>
 <p>The phone builds the 3D model itself, so you need no other device.</p>
 <ol>
-<li>Open Capture Guide. While the screen reads "Preparing splat engine…", the app tunes its engine for your phone. The camera appears when it is ready.</li>
-<li>Leave the chip on "Splat: iPhone".</li>
-<li>Tap Record. A pill at the top shows the tracking state and a count, for example "Tracking · 0 frames". The number counts keyframes, the photos the app keeps.</li>
-<li>Walk slowly and keep the camera on the scene. Each time the app takes a keyframe, a white border flashes once around the screen. <a href="../capturing/">Capturing a scene</a> explains how to walk.</li>
-<li>Follow the guidance. A white ring around the Stop button fills as more of the scene is covered; it appears once the phone has a first coverage figure. <a href="../guidance/">Reading the guidance</a> explains each part.</li>
-<li>When "Room covered" appears, or when you have everything you want, tap Stop.</li>
-<li>The capture opens. While the phone still writes the 3D model, the button at the bottom reads "Saving splat…". Then it reads "Done", and the line above it says what was saved, for example "Saved with splat".</li>
-<li>Tap Done to go back to the camera. The capture stays on the phone: open it from the picture at the bottom left, or find it in the Files app. <a href="../exporting/">Your captures and exporting</a> shows what you can do with it.</li>
+<li>Open Capture Guide and wait while it reads "Preparing splat engine…".</li>
+<li>Leave the chip on "Splat: iPhone" and tap <strong>Record</strong>.</li>
+<li>Walk slowly with the camera on the scene and follow the guidance (<a href="../capturing/">Capturing a scene</a>, <a href="../guidance/">Reading the guidance</a>).</li>
+<li>Tap <strong>Stop</strong> when "Room covered" appears, or when you have everything you want.</li>
+<li>When the button at the bottom changes from "Saving splat…" to "Done", tap it. <a href="../exporting/">Your captures and exporting</a> shows what you can do with the capture.</li>
 </ol>
-<figure>
-<p><img alt="Camera screen while recording: status pill, guidance line, map and progress ring" loading="lazy" src="../img/getting-started-recording.png" /></p>
-<figcaption>
-<p>Screenshot pending: the camera screen while recording, with the status pill and the guidance line at the top, the quality dots on the scene, the round map at the bottom left and the ring around the Stop button.</p>
-</figcaption>
+<figure class="callouts">
+<p><img alt="Camera screen while recording: status pill, guidance line, side rail, map button, Stop and gear" src="../img/getting-started-recording.jpg" /></p>
+<ol>
+<li data-anchor="status-pill" data-side="l"><a href="../capturing/#keyframes"><strong>Status pill</strong></a>: tracking state and the number of keyframes.</li>
+<li data-anchor="guidance-line" data-side="r"><a href="../guidance/#the-guidance-line"><strong>Guidance line</strong></a>: what to do next.</li>
+<li data-anchor="rail" data-side="r"><a href="../guidance/#the-side-rail"><strong>Side rail</strong></a>: guidance layers on and off.</li>
+<li data-anchor="map-button" data-side="l"><a href="../guidance/#minimap"><strong>Map button</strong></a>: shows the map again. Tapping the map hides it.</li>
+<li data-anchor="stop" data-side="l"><a href="../guidance/#progress-ring"><strong>Stop</strong></a>: ends the capture. Its ring fills with coverage.</li>
+<li data-anchor="gear" data-side="r"><a href="#settings"><strong>Settings</strong></a>: some rows are locked while you record.</li>
+</ol>
 </figure>
-<h2 id="settings">Settings</h2>
-<p>Tap the gear, or the Live splat chip. Settings that change how the camera runs can't be changed during a capture; they read "Stop to change." until you tap Stop.</p>
+<details class="note">
+<summary>Details</summary>
 <ul>
-<li><strong>Live splat</strong>: where the 3D model is built while you capture.<ul>
-<li>"This iPhone" is the default. If the phone cannot start its engine, the chip adds "(unavailable)".</li>
-<li>"Mac" is for the planned Mac companion app. Macs found on your network appear in a list, and you can type an address. If no Mac answers within a few seconds, the capture runs without a 3D model and the chip adds "(not found)".</li>
-<li>"Off" builds no 3D model and keeps the phone cooler. The guidance still works, without the grey hatching.</li>
+<li>While it prepares, the app tunes its engine for your phone; the camera appears once the engine is ready.</li>
+<li>A white border flashes once each time the app takes a keyframe, a photo it keeps.</li>
+<li>The pill reads, for example, "Tracking · 0 frames"; the number counts keyframes.</li>
+<li>The white ring around Stop appears once the phone has a first coverage figure, and fills as more of the scene is covered.</li>
+<li>The capture opens when you tap Stop. After saving, the line above "Done" says what was saved, for example "Saved with splat". "Done" takes you back to the camera.</li>
+<li>The capture stays on the phone. Open it later from the picture at the bottom left, or find it in the Files app.</li>
 </ul>
-</li>
-<li><strong>Use LiDAR</strong>: on by default on phones with the sensor.</li>
-<li><strong>Scene</strong>: "Indoor" or "Outdoor". Outdoor trains the model with a sky background and uses larger cells, for scenes that reach far away.</li>
-<li><strong>Photo overlap</strong>: how much of its view a new keyframe may share with the one before. "Splatting 60 %" is the default. "SfM-safe 72 %" takes more photos, which suits photogrammetry software.</li>
-<li><strong>Guidance sounds</strong> and <strong>Proximity ticks</strong>: see <a href="../guidance/#guidance-sounds-and-taps">Guidance sounds and taps</a>.</li>
-<li><strong>Coverage colours</strong>: the colours of the quality dots and the map. "Blue-Orange" is the default; "Cividis" runs from dark blue to yellow.</li>
-</ul>
-<figure>
-<p><img alt="Settings with Live splat, Capture, Photos and Guidance" loading="lazy" src="../img/getting-started-settings.jpg" width="320" /></p>
-<figcaption>
-<p>Settings; some rows explain themselves in a grey second line.</p>
-</figcaption>
+</details>
+<h2 id="settings">Settings</h2>
+<p>Open Settings with the gear or the Live splat chip. Rows that change how the camera runs read "Stop to change." during a capture. Some rows explain themselves in a grey second line.</p>
+<figure class="callouts">
+<p><img alt="Settings with Live splat, Capture, Photos and Guidance" src="../img/getting-started-settings.jpg" /></p>
+<ol>
+<li data-anchor="live-splat" data-side="r"><a href="#live-splat"><strong>Live splat</strong></a>: where the 3D model is built.</li>
+<li data-anchor="use-lidar" data-side="r"><a href="#requirements"><strong>Use LiDAR</strong></a>: on by default; greyed out without the sensor.</li>
+<li data-anchor="scene" data-side="r"><a href="#other-settings"><strong>Scene</strong></a>: "Indoor" or "Outdoor".</li>
+<li data-anchor="photo-overlap" data-side="r"><a href="#other-settings"><strong>Photo overlap</strong></a>: how much a new keyframe may share with the last.</li>
+<li data-anchor="guidance-sounds" data-side="r"><a href="../guidance/#guidance-sounds-and-taps"><strong>Guidance sounds</strong></a>: a click and a tone for the targets.</li>
+<li data-anchor="proximity-ticks" data-side="r"><a href="../guidance/#guidance-sounds-and-taps"><strong>Proximity ticks</strong></a>: taps that speed up near the yellow camera.</li>
+</ol>
 </figure>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>A Mac companion app is planned. Capture Guide does not need it.</p>
-</div>
+<h3 id="live-splat">Live splat</h3>
+<ul>
+<li><strong>This iPhone</strong> (default).</li>
+<li><strong>Mac</strong>: for the planned Mac companion app, which Capture Guide does not need; pick a Mac found on your network, or type an address.</li>
+<li><strong>Off</strong>: no 3D model and a cooler phone; the guidance still works, without the grey hatching.</li>
+</ul>
+<details class="note">
+<summary>Details</summary>
+<ul>
+<li>If the phone cannot start its engine, the chip adds "(unavailable)".</li>
+<li>If no Mac answers within a few seconds, the capture runs without a 3D model and the chip adds "(not found)".</li>
+</ul>
+</details>
+<h3 id="other-settings">Other settings</h3>
+<ul>
+<li><strong>Scene</strong>: "Outdoor" is for scenes that reach far away.</li>
+<li><strong>Photo overlap</strong>: "Splatting 60 %" is the default; "SfM-safe 72 %" takes more photos, which suits photogrammetry software.</li>
+<li><strong>Coverage colours</strong> (under Guidance): the colours of the quality dots and the map, "Blue-Orange" by default or "Cividis", which runs from dark blue to yellow.</li>
+</ul>
+<details class="note">
+<summary>Details</summary>
+<p>"Outdoor" trains the model with a sky background and uses larger cells.</p>
+</details>
 
 
 
@@ -810,6 +898,8 @@
     
     
       <script src="../assets/javascripts/bundle.3c842f4c.min.js"></script>
+      
+        <script src="../javascripts/callouts.js"></script>
       
     
   </body>

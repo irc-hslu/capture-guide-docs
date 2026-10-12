@@ -338,10 +338,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overlap-and-viewpoint-variety" class="md-nav__link">
+  <a href="#keyframes" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Overlap and viewpoint variety
+        Keyframes
       </span>
     </span>
   </a>
@@ -382,21 +382,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reflective-surfaces" class="md-nav__link">
+  <a href="#what-reconstructs-poorly" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Reflective surfaces
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#motion-in-the-scene" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Motion in the scene
+        What reconstructs poorly
       </span>
     </span>
   </a>
@@ -611,10 +600,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overlap-and-viewpoint-variety" class="md-nav__link">
+  <a href="#keyframes" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Overlap and viewpoint variety
+        Keyframes
       </span>
     </span>
   </a>
@@ -655,21 +644,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reflective-surfaces" class="md-nav__link">
+  <a href="#what-reconstructs-poorly" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Reflective surfaces
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#motion-in-the-scene" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Motion in the scene
+        What reconstructs poorly
       </span>
     </span>
   </a>
@@ -749,53 +727,97 @@
 
 
 <h1 id="capturing-a-scene">Capturing a scene</h1>
-<p>How to record a scene with Capture Guide. The app is built for scenes: rooms and other spaces, indoors or outdoors. It has no mode for small objects.</p>
-<h2 id="overlap-and-viewpoint-variety">Overlap and viewpoint variety</h2>
-<p>A 3D reconstruction needs every part of the scene in several photos taken from different places. Two rules follow from that.</p>
-<p>Move between shots. The app takes a keyframe (a photo it keeps for the reconstruction) when the view has changed enough against the last one. By default that means the new view shares about 60% or less with the last keyframe ("Photo overlap" in Settings, which opens with the gear at the bottom right of the camera screen), or you have turned the phone by about 10 degrees. Standing still adds nothing. A turn on the spot does add a frame every so often, which keeps the keyframes linked, but a step sideways gives the reconstruction the new angle it needs.</p>
-<p>Do not retrace yourself. If you stand close to an earlier keyframe and look the same way, within about 10 degrees, the app skips the frame. "Close" scales with how far away the surfaces are: from 5 cm up to 30 cm. Come back to a spot from a different direction and it counts again.</p>
-<h2 id="walking-pace-and-distance">Walking pace and distance</h2>
-<p>Walk slowly and keep the phone steady. The app measures how much the image smears: the faster you turn the phone, the more blur, and a dim room makes it worse because the camera exposes longer. A frame that smears by more than about 2 pixels is skipped, and the frame count in the pill at the top stops rising. Slow down, and it picks up again.</p>
-<p>The app does not enforce a distance to the surfaces. Check the guidance and the keyframe flashes to see whether the phone is picking up your view.</p>
-<h2 id="angles">Angles</h2>
-<p>Look at the same wall or piece of furniture from more than one side. A sideways step changes the view of nearby surfaces far more than a turn does, and that change in angle is one of the triggers for a new keyframe. For the floor and ceiling, tilt the phone down or up while you walk.</p>
-<p>The guidance helps with this: it shows a yellow camera where to stand and the outlined area you should point at. <a href="../guidance/">Reading the guidance</a> explains it.</p>
-<h2 id="light">Light</h2>
-<p>Bright, even light gives sharp frames. In a dim room the camera exposes longer, so the same movement smears more and more frames are skipped for blur. Turn on the lights or move more slowly. In general, steady lighting through the whole capture gives a more even result than light that changes as you go.</p>
-<h2 id="reflective-surfaces">Reflective surfaces</h2>
-<p>In general, mirrors and glass reconstruct poorly, and so do other very shiny surfaces, because what they show changes with your viewpoint. Expect weak results there.</p>
-<h2 id="motion-in-the-scene">Motion in the scene</h2>
-<p>A reconstruction assumes the scene stands still. In general, anything that moves while you capture, such as people or traffic, can show up as smears in the result. Wait for it to pass when you can.</p>
-<h2 id="keyframes-by-hand">Keyframes by hand</h2>
-<p>If you want full control, turn on manual capture with the hand button on the side rail. The automatic keyframes stop, and while you record, a round shutter button appears above the rail. Tapping it takes a keyframe from the next sharp frame. If none arrives within about half a second, the button flashes red; hold the phone still and try again.</p>
-<figure>
-<p><img alt="Keyframe flash while walking" loading="lazy" src="../img/capturing-keyframe-pulse.png" /></p>
-<figcaption>
-<p>Screenshot pending: a white border around the screen at the moment of a keyframe.</p>
-</figcaption>
+<p>Capture Guide is built for scenes: rooms and other spaces, indoors or outdoors. It has no mode for small objects.</p>
+<h2 id="keyframes">Keyframes</h2>
+<p>A 3D reconstruction needs every part of the scene in several photos taken from different places. The app keeps a photo, a keyframe, when your view has changed enough since the last one.</p>
+<figure class="callouts">
+<p><img alt="Keyframe flash: a white border around the screen while recording" src="../img/capturing-keyframe-pulse.jpg" /></p>
+<ol>
+<li data-anchor="status-pill" data-side="r"><a href="#walking-pace-and-distance"><strong>Status pill</strong></a>: counts keyframes. Stops rising when frames blur.</li>
+<li data-anchor="keyframe-pulse" data-side="l"><a href="#keyframes"><strong>White border</strong></a>: flashes once for each keyframe.</li>
+<li data-anchor="rail-manual" data-side="r"><a href="#keyframes-by-hand"><strong>Hand button</strong></a>: turns on manual capture; you take the keyframes.</li>
+</ol>
 </figure>
-<h2 id="when-tracking-is-lost">When tracking is lost</h2>
-<p>The app only captures while the phone's tracking (Apple's ARKit) is working normally. If tracking drops, for example from fast motion or a scene with too little detail, capture pauses and the phone tries to find its place again.</p>
 <ul>
-<li>While it searches, a banner with an orange arrows symbol reads "Relocalising — move back to where you were. Starting a new segment in N s." Walk back to where you were. If the phone recognises the place, capture continues in the same segment.</li>
-<li>If it has not found the place after 15 seconds, or you tap "Start new segment here", capture continues in a new segment. While tracking restarts, the banner reads "Tracking restarting — a new segment starts when tracking returns.", and a second banner with a yellow tortoise reads "Move the phone slowly around to start tracking."</li>
+<li><strong>Move between shots</strong>: standing still adds nothing.</li>
+<li><strong>Don't retrace yourself</strong>: if you stand close to an earlier keyframe and look the same way, the app skips the frame; from a different direction it counts again.</li>
 </ul>
-<p>A segment is one continuous capture in one coordinate system. The phone starts a new one when it has lost the old coordinate system. Each segment is saved in its own folder, and the guidance starts over: the old reconstruction is no longer shown, and the ring around Stop comes back once the new segment has its first coverage figure. A capture with more than one segment shows "2 seg" (or more) on its card in your captures, and its Frames tab lists the segments one by one. You can tap "Start new segment here" during the countdown when you do not want to go back.</p>
-<figure>
-<p><img alt="Relocalising banner with the start new segment button" loading="lazy" src="../img/capturing-relocalising.png" /></p>
-<figcaption>
-<p>Screenshot pending: the dark relocalising banner under the status pill, with its orange symbol, the countdown and the "Start new segment here" button.</p>
-</figcaption>
+<details class="note">
+<summary>Details</summary>
+<ul>
+<li>A turn on the spot adds a frame now and then, which keeps the keyframes linked.</li>
+<li>By default a keyframe is taken when the view shares about 60 % or less with the last one (<a href="../getting-started/#other-settings">Photo overlap</a> in Settings, behind the gear at the bottom right of the camera screen), or after a turn of about 10 degrees.</li>
+<li>"The same way" means within about 10 degrees. "Close" scales with how far away the surfaces are, from 5 cm up to 30 cm.</li>
+</ul>
+</details>
+<h2 id="walking-pace-and-distance">Walking pace and distance</h2>
+<p>Walk slowly and keep the phone steady. Turning fast smears the image, worse in a dim room, and smeared frames are skipped: the count in the pill stops rising until you slow down. The app does not enforce a distance to the surfaces; the guidance and the keyframe flashes show whether the phone is picking up your view.</p>
+<details class="note">
+<summary>Details</summary>
+<ul>
+<li>A dim room makes the smear worse because the camera exposes longer.</li>
+<li>The app measures how much each frame smears. A frame that smears by more than about 2 pixels is skipped.</li>
+</ul>
+</details>
+<h2 id="angles">Angles</h2>
+<ul>
+<li>Look at the same wall or piece of furniture from more than one side.</li>
+<li>Step sideways rather than only turning.</li>
+<li>For the floor and ceiling, tilt the phone down or up while you walk.</li>
+</ul>
+<p>The guidance shows a yellow camera where to stand and the outlined area to point at, as described in <a href="../guidance/">Reading the guidance</a>.</p>
+<details class="note">
+<summary>Details</summary>
+<ul>
+<li>A step changes the view of nearby surfaces far more than a turn does, and that change in angle is one of the triggers for a new keyframe.</li>
+<li>The quality dots and the ring count a turn on the spot as no new direction (<a href="../guidance/#quality-dots">Quality dots</a>).</li>
+</ul>
+</details>
+<h2 id="light">Light</h2>
+<p>Bright, even light gives sharp frames; in dim light turn the lights on or move more slowly. Light that stays the same through the whole capture gives a more even result than light that changes as you go.</p>
+<h2 id="what-reconstructs-poorly">What reconstructs poorly</h2>
+<ul>
+<li><strong>Mirrors, glass and very shiny surfaces</strong>: what they show changes with your viewpoint. Expect weak results there.</li>
+<li><strong>Moving people or traffic</strong>: a reconstruction assumes the scene stands still, so anything that moves can show up as smears. Wait for it to pass when you can.</li>
+</ul>
+<h2 id="keyframes-by-hand">Keyframes by hand</h2>
+<p>Turn on manual capture with the hand button on the side rail: the automatic keyframes stop, and while you record, a round shutter button appears above the rail. Tap it to take a keyframe from the next sharp frame. If it flashes red, hold the phone still and try again.</p>
+<details class="note">
+<summary>Details</summary>
+<p>The button flashes red when no sharp frame arrives within about half a second.</p>
+</details>
+<h2 id="when-tracking-is-lost">When tracking is lost</h2>
+<p>The app only captures while the phone's tracking (Apple's ARKit) works normally. If tracking drops, for example from fast motion or a scene with too little detail, capture pauses and the phone tries to find its place again.</p>
+<figure class="callouts">
+<p><img alt="Relocalising banner with the countdown and the Start new segment here button" src="../img/capturing-relocalising.jpg" /></p>
+<ol>
+<li data-anchor="status-pill" data-side="l"><a href="#when-tracking-is-lost"><strong>Status pill</strong></a>: the tracking state.</li>
+<li data-anchor="banner-warning" data-side="r"><a href="#when-tracking-is-lost"><strong>Relocalising banner</strong></a>: walk back. Counts down to a new segment.</li>
+<li data-anchor="segment-button" data-side="l"><a href="#when-tracking-is-lost"><strong>Start new segment here</strong></a>: continue without going back.</li>
+</ol>
 </figure>
+<p>To get going again, walk back to where you were: if the phone recognises the place, capture continues in the same segment. Otherwise a new segment starts, and the guidance starts over.</p>
+<details class="note">
+<summary>Details</summary>
+<ul>
+<li>A segment is one continuous capture in one coordinate system. The phone starts a new one when it has lost the old coordinate system. Tap "Start new segment here" during the countdown when you do not want to go back.</li>
+<li>The banner with an orange arrows symbol reads "Relocalising — move back to where you were. Starting a new segment in N s." After 15 seconds without finding the place, capture continues in a new segment.</li>
+<li>While tracking restarts, the banner reads "Tracking restarting — a new segment starts when tracking returns.", and a second banner with a yellow tortoise reads "Move the phone slowly around to start tracking."</li>
+<li>Each segment is saved in its own folder.</li>
+<li>In a new segment the old reconstruction is no longer shown, and the ring around Stop comes back once the segment has its first coverage figure.</li>
+<li>A capture with more than one segment shows "2 seg" (or more) on its card in your captures, and its Frames tab lists the segments one by one.</li>
+</ul>
+</details>
 <h2 id="an-indoor-room">An indoor room</h2>
-<p>Walk the room and follow the guidance. The app shows a yellow camera where to stand next and an outlined area to point at. When it reports "Room covered", it has no further target.</p>
-<p>With LiDAR, grey diagonal hatching appears on surfaces the phone sees that the reconstruction does not cover yet. It disappears once you have captured them. Without LiDAR, or with Live splat set to "Off", there is no hatching, so rely on the coloured quality dots (they show how well each part of the scene is covered) and the map.</p>
+<p>Walk the room and follow the guidance until it reports "Room covered"; then it has no further target. With LiDAR, grey diagonal hatching marks surfaces the phone sees that the reconstruction does not cover yet, and disappears once you have captured them. Without LiDAR, or with Live splat set to "Off", there is no hatching: use the coloured quality dots (how well each part is covered) and the map instead.</p>
 <h2 id="an-outdoor-walk">An outdoor walk</h2>
-<p>Before you tap Record, set "Scene" to "Outdoor" in Settings. The engine then trains with a sky background and uses larger cells. The setting can't be changed during a capture.</p>
+<p>Set "Scene" to "Outdoor" in Settings before you tap Record; it can't be changed during a capture. The engine then trains with a sky background and uses larger cells. Moving people and traffic cause the smears described <a href="#what-reconstructs-poorly">above</a>.</p>
+<details class="note">
+<summary>Details</summary>
 <p>Beyond the range of LiDAR, and on phones without it, the phone estimates depth from the image alone, so distant surfaces still get guidance.</p>
-<p>Moving people and traffic add the problem described above.</p>
+</details>
 <h2 id="keeping-the-screen-on">Keeping the screen on</h2>
-<p>While a capture runs, the phone does not dim or lock the screen. After you tap Stop, the usual screen timeout applies again as soon as the phone has finished saving the capture.</p>
+<p>The screen does not dim or lock while a capture runs. After you tap Stop, the usual timeout returns once the capture is saved.</p>
 
 
 
@@ -918,6 +940,8 @@
     
     
       <script src="../assets/javascripts/bundle.3c842f4c.min.js"></script>
+      
+        <script src="../javascripts/callouts.js"></script>
       
     
   </body>

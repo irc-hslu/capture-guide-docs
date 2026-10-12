@@ -12,3 +12,26 @@
   --md-accent-fg-color: #2698ba;
   --md-default-bg-color: #1c1c1d;
 }
+
+/* Leader-line callouts (javascripts/callouts.js) */
+figure.callouts { display: block; position: relative; margin: 1.5em 0; text-align: left; }
+figure.callouts img { display: block; max-width: 100%; height: auto; }
+figure.callouts ol { margin: 0.8em 0 0; }
+.callouts__shot { position: relative; width: min(var(--shot-w, 300px), 100%); margin: 0 auto; }
+.callouts__shot img { border-radius: 18px; border: 1px solid var(--md-default-fg-color--lightest); }
+.callouts__marker { display: none; position: absolute; transform: translate(-50%, -50%); width: 1.5em; height: 1.5em;
+  border-radius: 50%; background: var(--md-accent-fg-color); color: var(--md-accent-bg-color, #fff);
+  font: 700 0.7rem/1.5em var(--md-text-font-family); text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,.45); }
+.callouts__lines { display: none; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.callouts__lines line { stroke: var(--md-default-fg-color); stroke-width: 1.2; }
+.callouts__lines circle { fill: var(--md-default-fg-color); stroke: var(--md-default-bg-color); stroke-width: 1.5; }
+figure.callouts--narrow .callouts__marker { display: block; }
+figure.callouts--narrow ol > li::marker { font-weight: 700; color: var(--md-accent-fg-color); }
+figure.callouts--wide ol { margin: 0; padding: 0; list-style: none; }
+figure.callouts--wide ol > li { position: absolute; width: calc(50% - var(--shot-w, 300px) / 2 - 2.2em); margin: 0; font-size: 0.72rem; line-height: 1.35; }
+figure.callouts--wide ol > li[data-side="l"] { left: 0; text-align: right; }
+figure.callouts--wide ol > li:not([data-side="l"]) { right: 0; }
+figure.callouts--wide .callouts__lines { display: block; }
+figure.callouts .is-on { outline: 2px solid var(--md-accent-fg-color); outline-offset: 2px; border-radius: 4px; }
+.callouts__marker[hidden] { display: none !important; }
+figure.callouts--loading ol { visibility: hidden; }
