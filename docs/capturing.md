@@ -28,7 +28,7 @@ A 3D reconstruction needs every part of the scene in several photos taken from d
 
 ## Walking pace and distance
 
-Walk slowly and keep the phone steady. Turning fast smears the image, worse in a dim room, and smeared frames are skipped: the count in the pill stops rising until you slow down. The app does not enforce a distance to the surfaces; the guidance and the keyframe flashes show whether the phone is picking up your view.
+Walk slowly and keep the phone steady. Turning fast smears the image, worse in a dim room, and smeared frames are skipped: the count in the pill stops rising until you slow down. If you move too fast for a sharp photo while the app wants one, a yellow tortoise pill "Slow down" replaces the guidance line, with a soft tap. It goes away once a sharp photo is taken. The app does not enforce a distance to the surfaces; the guidance and the keyframe flashes show whether the phone is picking up your view.
 
 ??? note "Details"
     - A dim room makes the smear worse because the camera exposes longer.

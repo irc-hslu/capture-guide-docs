@@ -29,7 +29,7 @@ Walls bend because the camera positions have probably drifted (slid away from th
 
 The frame count in the status pill stays where it is while you walk. Frames are too blurry, or you are standing still.
 
-- Walk and turn more slowly.
+- Walk and turn more slowly. When you move too fast for a sharp photo, a yellow tortoise pill "Slow down" replaces the guidance line, with a soft tap. It goes away once a sharp photo is taken.
 - Add light.
 - Check the hand button on the side rail. With manual capture on, the app takes keyframes only when you tap the shutter.
 
