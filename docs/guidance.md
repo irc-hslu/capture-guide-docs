@@ -174,8 +174,9 @@ The filled part of the white ring around Stop is the share of the known surface 
 
 ## Minimap
 
-The round map looks down on the area around you: your view direction points up, and the white triangle in the middle is you. Its squares are coloured like the dots, so it shows weak spots even behind you, and a yellow dot marks the next-view target. Use it to pick where to walk; the target and dots show the details. Tap the map to hide it; a round map button takes its place and brings it back.
+The round map looks down on the area around you: your view direction points up, and the white triangle in the middle is you. Its squares are coloured like the dots, so it shows weak spots even behind you, and a yellow dot marks the next-view target. Small white wedges mark where you took keyframes and which way the camera looked, so you see which sides you have already photographed. Use it to pick where to walk; the target and dots show the details. Tap the map to hide it; a round map button takes its place and brings it back.
 
 ??? note "Details"
     - The map covers 5 m around you. Each small square is a patch of known surface, with the legend "good" and "needs work" under the map.
     - The yellow dot has a short arrow towards the area to point at. If the yellow camera is more than 5 m away, the dot sits on the rim.
+    - A keyframe taken looking almost straight up or down shows as a small white dot instead of a wedge.
