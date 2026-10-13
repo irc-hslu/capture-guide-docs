@@ -98,7 +98,7 @@ A click tells you that you reached the yellow camera, and a tone that its area i
 
 ## Quality dots
 
-The dots lie on the surfaces the phone knows. With the default colours, "Blue-Orange", light blue is well covered, the colour darkens as coverage gets worse, and orange needs work. Walk towards the weak dots and look at them from a new side; moving sideways helps more than turning on the spot, as [Capturing a scene](capturing.md#angles) explains. Walk around a surface rather than along it to fill corners and edges.
+The dots lie on the surfaces the phone knows. Each dot is a small flat disc lying on its surface, so nearer dots hide the ones behind them. Beyond about 9 m they fade, and past 18 m they stay faint: the area is mapped, just far away. With the default colours, "Blue-Orange", light blue is well covered, the colour darkens as coverage gets worse, and orange needs work. Walk towards the weak dots and look at them from a new side; moving sideways helps more than turning on the spot, as [Capturing a scene](capturing.md#angles) explains. Walk around a surface rather than along it to fill corners and edges.
 
 ??? note "Details"
     - A spot gets full marks once the phone has seen it from 3 clearly different directions and from close enough at least once. Fewer directions, or only distant photos, leave the dot towards orange.
