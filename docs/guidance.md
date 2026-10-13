@@ -180,3 +180,4 @@ The round map looks down on the area around you: your view direction points up, 
     - The map covers 5 m around you. Each small square is a patch of known surface, with the legend "good" and "needs work" under the map.
     - The yellow dot has a short arrow towards the area to point at. If the yellow camera is more than 5 m away, the dot sits on the rim.
     - A keyframe taken looking almost straight up or down shows as a small white dot instead of a wedge.
+    - A new segment clears the wedges, because the old coordinate system is gone.
