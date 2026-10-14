@@ -125,6 +125,7 @@ Every capture is saved on the phone while you record, with nothing to switch on.
 
 ??? note "Details"
     - A folder name looks like `2026-10-07T12-30-00Z`.
+    - `capture.json` holds the place where you started. With "Save location in photos" on, every photo also records where it was taken, so a shared capture shows the path you walked.
     - `overlay-metrics.jsonl` is a working file you can ignore. Captures from older versions of the app also have a `thumb.jpg`, which you can ignore too.
     - There is one folder per segment: `segment-0`, `segment-1` and so on. A segment is one continuous stretch of capture in one coordinate system ([Capturing a scene](capturing.md#when-tracking-is-lost) explains when a new one starts).
     - While you capture, the photos are written straight away, but the list in `transforms.json` is updated after every tenth keyframe and when a segment ends. Stopping updates it too. If the app closes in between, the newest photos stay in `images/` but are missing from the list.
@@ -236,11 +237,32 @@ Photos that the app cannot match well enough are left out of the model. If many 
 - `sparse/0/`: the COLMAP model.
 - `seed.ply`: the starting points for training.
 - `depths/`: the phone's depth sensor readings for each photo.
+- `geo.json`: where on Earth the model stands, when the capture has enough location data. See [Placing the model on a map](#placing-the-model-on-a-map).
 - `work/`: the app's working files, which the trainer does not need.
 
 ??? note "Details"
+    - `geo.json` is absent when the capture has no location data.
     - `seed.ply` is absent when Starting points is None or nothing could be built.
     - `depths/` is absent when Depth images is None or the capture has no depth sensor data.
+
+### Placing the model on a map
+
+If "Save location in photos" was on while you captured outdoors, the status line ends with "Placed on the map (±3 m, heading ±5°)" (your numbers will differ) and the output folder holds `geo.json`. It tells a map tool where the model stands and which way it faces.
+
+- **Origin**: latitude, longitude and, when the phone knew it, height above sea level of the model's centre point (0, 0, 0).
+- **Directions**: the model is in metres, with x pointing east, y north and z up, around the origin.
+- **Heading**: the compass direction (clockwise from north) in which you were facing when the capture started.
+
+To place the splat in a map tool, put its origin at the latitude and longitude and rotate it by the heading.
+
+If the status line says "Not placed on the map: …", the export itself is fine. The reason says what was missing: too few location fixes, a walk too short for the GPS accuracy, a GPS track that does not fit the walked path, or a heading that is too uncertain. A capture without any location data shows no note.
+
+??? note "Details"
+    - Expect a few metres and a few degrees on a long outdoor walk. Indoors the phone gets no usable GPS, so a capture there cannot be placed.
+    - GPS height is less exact than position. When the phone had no valid height, the origin has no height.
+    - While "Save location in photos" is on, the photos and shared captures contain the path you walked.
+    - `geo.json` also holds the accuracy numbers and `tracker_to_enu`, a 4×4 matrix (row by row) that turns the phone's coordinates into east, north, up. The quick route does not use it.
+    - On the phone, each segment folder then also has `gps.jsonl`, a log of every location fix, and the photos carry their location, as in the Info panel of Files or Preview. Phone photos with "Precise Location" off in iOS get coarse fixes, which are too inaccurate to place a model.
 
 ## Training
 

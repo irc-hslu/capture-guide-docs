@@ -118,7 +118,9 @@ Open Settings with the gear or the Live splat chip. Rows that change how the cam
     - "SIFT — more overlap (72 %)" takes more photos, for hard scenes or other photogrammetry software.
     - "ALIKED (35 %)" takes the fewest photos, for software that matches with ALIKED and LightGlue.
     - "Custom" shows a slider from 25 to 85 %.
+- **Save location in photos** (under Capture, on by default): while you record, the phone notes where each photo was taken. Capture to COLMAP can use this to [place the model on a map](exporting.md#placing-the-model-on-a-map). Switched off, only the place of the whole capture is kept.
 - **Coverage colours** (under Guidance): the colours of the quality dots and the map, "Blue-Orange" by default or "Cividis", which runs from dark blue to yellow.
 
 ??? note "Details"
-    "Outdoor" trains the model with a sky background and uses larger cells.
+    - "Outdoor" trains the model with a sky background and uses larger cells.
+    - With "Save location in photos" on, your photos and a shared capture contain the path you walked. Switch it off before sharing captures you want to keep private.
