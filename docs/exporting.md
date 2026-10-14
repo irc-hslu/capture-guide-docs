@@ -247,13 +247,13 @@ Photos that the app cannot match well enough are left out of the model. If many 
 
 ### Placing the model on a map
 
-If "Save location in photos" was on while you captured outdoors, the status line ends with "Placed on the map (±3 m, heading ±5°)." (your numbers will differ) and the output folder holds `geo.json`. It tells a map tool where the model stands and which way it faces.
+If "Save location in photos" was on while you captured outdoors, the status line ends with "Placed on the map (±3 m, heading ±5°)." (your numbers will differ) and the output folder holds `geo.json`. It tells a map tool where the model stands.
 
 - **Origin**: latitude, longitude and, when the phone knew it, height above sea level of the model's centre point (0, 0, 0).
 - **Directions**: the export is already turned to east, north, up. It is in metres, with x pointing east, y north and z up, around the origin.
 - **Heading**: the compass direction (clockwise from north) in which you were facing when the capture started.
 
-To place the splat in a map tool, The model is already turned so that x points east, y north and z up, so don't rotate it. Put its centre (0, 0, 0) at the latitude and longitude, and at the height if the file has one. The heading only tells you which way you were facing at the start.
+To place the splat in a map tool, don't rotate it: the model is already turned so that x points east, y north and z up. Put its centre (0, 0, 0) at the latitude and longitude, and at the height if the file has one. The heading only tells you which way you were facing at the start.
 
 If the status line says "Not placed on the map: <reason>.", the export itself is fine. The reason says what was missing: too few location fixes, a walk too short for the GPS accuracy, a GPS track that does not fit the walked path, or a heading that is too uncertain. A capture without any location data shows no note.
 
