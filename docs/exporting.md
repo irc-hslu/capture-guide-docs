@@ -247,21 +247,21 @@ Photos that the app cannot match well enough are left out of the model. If many 
 
 ### Placing the model on a map
 
-If "Save location in photos" was on while you captured outdoors, the status line ends with "Placed on the map (±3 m, heading ±5°)" (your numbers will differ) and the output folder holds `geo.json`. It tells a map tool where the model stands and which way it faces.
+If "Save location in photos" was on while you captured outdoors, the status line ends with "Placed on the map (±3 m, heading ±5°)." (your numbers will differ) and the output folder holds `geo.json`. It tells a map tool where the model stands and which way it faces.
 
 - **Origin**: latitude, longitude and, when the phone knew it, height above sea level of the model's centre point (0, 0, 0).
-- **Directions**: the model is in metres, with x pointing east, y north and z up, around the origin.
+- **Directions**: the export is already turned to east, north, up. It is in metres, with x pointing east, y north and z up, around the origin.
 - **Heading**: the compass direction (clockwise from north) in which you were facing when the capture started.
 
-To place the splat in a map tool, put its origin at the latitude and longitude and rotate it by the heading.
+To place the splat in a map tool, The model is already turned so that x points east, y north and z up, so don't rotate it. Put its centre (0, 0, 0) at the latitude and longitude, and at the height if the file has one. The heading only tells you which way you were facing at the start.
 
-If the status line says "Not placed on the map: …", the export itself is fine. The reason says what was missing: too few location fixes, a walk too short for the GPS accuracy, a GPS track that does not fit the walked path, or a heading that is too uncertain. A capture without any location data shows no note.
+If the status line says "Not placed on the map: <reason>.", the export itself is fine. The reason says what was missing: too few location fixes, a walk too short for the GPS accuracy, a GPS track that does not fit the walked path, or a heading that is too uncertain. A capture without any location data shows no note.
 
 ??? note "Details"
     - Expect a few metres and a few degrees on a long outdoor walk. Indoors the phone gets no usable GPS, so a capture there cannot be placed.
     - GPS height is less exact than position. When the phone had no valid height, the origin has no height.
     - While "Save location in photos" is on, the photos and shared captures contain the path you walked.
-    - `geo.json` also holds the accuracy numbers and `tracker_to_enu`, a 4×4 matrix (row by row) that turns the phone's coordinates into east, north, up. The quick route does not use it.
+    - `geo.json` also holds the accuracy numbers and `tracker_to_enu`, a 4×4 matrix (row by row) that turns the phone's coordinates into east, north, up. You only need it if you train straight from a segment folder (the quick route), because its camera positions are still in the phone's own frame. The Capture to COLMAP model is already in east, north, up.
     - On the phone, each segment folder then also has `gps.jsonl`, a log of every location fix, and the photos carry their location, as in the Info panel of Files or Preview. Phone photos with "Precise Location" off in iOS get coarse fixes, which are too inaccurate to place a model.
 
 ## Training
