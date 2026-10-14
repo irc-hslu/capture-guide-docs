@@ -237,11 +237,11 @@ Photos that the app cannot match well enough are left out of the model. If many 
 - `sparse/0/`: the COLMAP model.
 - `seed.ply`: the starting points for training.
 - `depths/`: the phone's depth sensor readings for each photo.
-- `geo.json`: where on Earth the model stands, when the capture has enough location data. See [Placing the model on a map](#placing-the-model-on-a-map).
+- `geo.json`: where on Earth the model stands, or why it could not be placed. See [Placing the model on a map](#placing-the-model-on-a-map).
 - `work/`: the app's working files, which the trainer does not need.
 
 ??? note "Details"
-    - `geo.json` is absent when the capture has no location data.
+    - Every export writes `geo.json`. Without location data it says "not placed" and why.
     - `seed.ply` is absent when Starting points is None or nothing could be built.
     - `depths/` is absent when Depth images is None or the capture has no depth sensor data.
 
@@ -249,13 +249,13 @@ Photos that the app cannot match well enough are left out of the model. If many 
 
 If "Save location in photos" was on while you captured outdoors, the status line ends with "Placed on the map (±3 m, heading ±5°)." (your numbers will differ) and the output folder holds `geo.json`. It tells a map tool where the model stands.
 
-- **Origin**: latitude, longitude and, when the phone knew it, height above sea level of the model's centre point (0, 0, 0).
+- **Origin**: latitude, longitude and, when the phone knew it, the height of the model's centre point (0, 0, 0). This height is the GPS height above the WGS-84 ellipsoid, not above sea level. In Switzerland it is about 50 m more than the height above sea level. In your map tool, enter it as ellipsoidal height, or subtract the local geoid height first.
 - **Directions**: the export is already turned to east, north, up. It is in metres, with x pointing east, y north and z up, around the origin.
-- **Heading**: the compass direction (clockwise from north) in which you were facing when the capture started.
+- **Heading**: the direction of the phone tracker's forward axis when tracking started, as a compass direction (clockwise from north). You don't need it to place the model.
 
-To place the splat in a map tool, don't rotate it: the model is already turned so that x points east, y north and z up. Put its centre (0, 0, 0) at the latitude and longitude, and at the height if the file has one. The heading only tells you which way you were facing at the start.
+To place the splat in a map tool, don't rotate it: the model is already turned so that x points east, y north and z up. Put its centre (0, 0, 0) at the latitude and longitude, and at the height if the file has one (as ellipsoidal height).
 
-If the status line says "Not placed on the map: <reason>.", the export itself is fine. The reason says what was missing: too few location fixes, a walk too short for the GPS accuracy, a GPS track that does not fit the walked path, or a heading that is too uncertain. A capture without any location data shows no note.
+If the status line says "Not placed on the map: <reason>.", the export itself is fine. The reason says what was missing: too few location fixes, a walk too short for the GPS accuracy, a GPS track that does not fit the walked path, a heading that is too uncertain, or a model that is not level with the phone's tracking. A capture without any location data shows no note.
 
 ??? note "Details"
     - Expect a few metres and a few degrees on a long outdoor walk. Indoors the phone gets no usable GPS, so a capture there cannot be placed.
