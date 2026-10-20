@@ -27,7 +27,7 @@ Tap the picture at the bottom left of the camera screen. Your captures appear as
 </figure>
 
 - **Rename**: open the capture and tap its name at the top.
-- **Map**: tap "Map" to see your captures on a map. Tap a photo to see its path and name, tap it again to open the capture. Captures appear only when location was allowed.
+- **Map**: tap "Map" to see your captures on a map. Tap a photo to see its path and name, tap it again to open the capture. Captures appear only when location was allowed. Captures close together show as one photo with a number: tap it to zoom in, or to see a list when they were taken at the same spot. You can also tap the card at the bottom to open a capture.
 - **Delete**: tap "Select", tap the captures, then "Delete" at the bottom, and confirm. This cannot be undone.
 
 ??? note "Details"
