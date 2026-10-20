@@ -13,18 +13,21 @@ Tap the picture at the bottom left of the camera screen. Your captures appear as
    { data-anchor="library-close" data-side="l" }
 2. [**Select**](#your-captures): pick captures to delete.
    { data-anchor="library-select" data-side="r" }
-3. [**Photos**](#looking-at-a-capture): four photos from the capture. Tap to open it.
+3. [**Map**](#your-captures): where you captured, with your walked paths.
+   { data-anchor="library-map" data-side="r" }
+4. [**Photos**](#looking-at-a-capture): four photos from the capture. Tap to open it.
    { data-anchor="card-collage" data-side="l" data-at="center" }
-4. [**Name**](#your-captures): place and time, or date and time.
+5. [**Name**](#your-captures): place and time, or date and time.
    { data-anchor="card-name" data-side="l" }
-5. [**Date and place**](#your-captures): when and where you captured.
+6. [**Date and place**](#your-captures): when and where you captured.
    { data-anchor="card-date" data-side="r" }
-6. [**Frames and size**](#your-captures): number of keyframes and space on the phone.
+7. [**Frames and size**](#your-captures): number of keyframes and space on the phone.
    { data-anchor="card-frames" data-side="l" }
 
 </figure>
 
 - **Rename**: open the capture and tap its name at the top.
+- **Map**: tap "Map" to see your captures on a map. Tap a photo to see its path and name, tap it again to open the capture. Captures appear only when location was allowed.
 - **Delete**: tap "Select", tap the captures, then "Delete" at the bottom, and confirm. This cannot be undone.
 
 ??? note "Details"
